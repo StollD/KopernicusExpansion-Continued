@@ -18,6 +18,7 @@ build/
 bld/
 [Bb]in/
 [Oo]bj/
+*.dll
 
 # Unity specific
 [Ll]ibrary/

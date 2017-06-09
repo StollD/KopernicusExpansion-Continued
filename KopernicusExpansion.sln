@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-CometTail", "src\KEX-Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-Common", "src\KEX-Common\KEX-Common.csproj", "{32CACA6C-C471-417D-B2A7-B9A227187321}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-EmissiveFX", "src\KEX-EmissiveFX\KEX-EmissiveFX.csproj", "{35BA2830-5953-4D7A-9C7B-4FE3D5FBD55F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{32CACA6C-C471-417D-B2A7-B9A227187321}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32CACA6C-C471-417D-B2A7-B9A227187321}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32CACA6C-C471-417D-B2A7-B9A227187321}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35BA2830-5953-4D7A-9C7B-4FE3D5FBD55F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35BA2830-5953-4D7A-9C7B-4FE3D5FBD55F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35BA2830-5953-4D7A-9C7B-4FE3D5FBD55F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35BA2830-5953-4D7A-9C7B-4FE3D5FBD55F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

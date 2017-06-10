@@ -12,21 +12,36 @@ namespace KopernicusExpansion
         namespace Configuration
         {
             [RequireConfigType(ConfigType.Node)]
-            public class NoiseLoader<T> : IParserEventSubscriber where T : IModule
+            public class NoiseLoader<T> : NoiseLoader where T : IModule
             {
                 // The noise we are loading
-                public T noise { get; set; }
+                public new T noise
+                {
+                    get { return (T)base.noise; }
+                    set { base.noise = value; }
+                }
 
-                public virtual void Apply(ConfigNode node)
+                public override void Apply(ConfigNode node)
                 {
                     noise = Activator.CreateInstance<T>();
                 }
-
-                public virtual void PostApply(ConfigNode node)
-                {
-
-                }
             }
+
+            [RequireConfigType(ConfigType.Node)]
+            public class NoiseLoader : IParserEventSubscriber
+            {
+                public IModule noise;
+
+            public virtual void Apply(ConfigNode node)
+            {
+                
+            }
+
+            public virtual void PostApply(ConfigNode node)
+            {
+
+            }
+        }
         }
     }
 }

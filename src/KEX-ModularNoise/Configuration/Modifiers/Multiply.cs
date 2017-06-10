@@ -13,17 +13,16 @@ namespace KopernicusExpansion
             public class Multiply : NoiseLoader<LibNoise.Modifiers.Multiply>
             {
                 [PreApply]
-                [ParserTargetCollection("self", nameSignificance = NameSignificance.Type)]
-                public List<NoiseLoader<IModule>> modules;
+                [ParserTarget("SourceA", nameSignificance = NameSignificance.Type, optional = false)]
+                public NoiseLoader sourceModuleA;
+
+                [PreApply]
+                [ParserTarget("SourceB", nameSignificance = NameSignificance.Type, optional = false)]
+                public NoiseLoader sourceModuleB;
 
                 public override void Apply(ConfigNode node)
                 {
-                    IModule m = modules[0].noise;
-                    for (Int32 i = 1; i < modules.Count; i++)
-                    {
-                        m = new LibNoise.Modifiers.Multiply(m, modules[i].noise);
-                    }
-                    noise = (LibNoise.Modifiers.Multiply)m;
+                    noise = new LibNoise.Modifiers.Multiply(sourceModuleA.noise, sourceModuleB.noise);
                 }
             }
         }

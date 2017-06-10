@@ -13,19 +13,19 @@ namespace KopernicusExpansion
             {
                 [PreApply]
                 [ParserTarget("Source", nameSignificance = NameSignificance.Type, optional = false)]
-                public NoiseLoader<IModule> sourceModule;
+                public NoiseLoader sourceModule;
 
                 [PreApply]
                 [ParserTarget("DisplaceX", nameSignificance = NameSignificance.Type, optional = false)]
-                public NoiseLoader<IModule> displaceXModule;
+                public NoiseLoader displaceXModule;
 
                 [PreApply]
                 [ParserTarget("DisplaceY", nameSignificance = NameSignificance.Type, optional = false)]
-                public NoiseLoader<IModule> displaceYModule;
+                public NoiseLoader displaceYModule;
 
                 [PreApply]
                 [ParserTarget("DisplaceZ", nameSignificance = NameSignificance.Type, optional = false)]
-                public NoiseLoader<IModule> displaceZModule;
+                public NoiseLoader displaceZModule;
 
                 public override void Apply(ConfigNode node)
                 {

@@ -26,10 +26,10 @@ namespace KopernicusExpansion
                     set { mod.normalizeHeight = value; }
                 }
 
-                [ParserTarget("Noise", nameSignificance = NameSignificance.Type)]
-                public NoiseLoader<IModule> noise
+                [ParserTarget("Noise", nameSignificance = NameSignificance.Type, optional = false)]
+                public NoiseLoader noise
                 {
-                    set { mod.noise = value.noise; }
+                    set { mod.InitializeSerialization(); mod.noise = value.noise; }
                 }
             }
         }

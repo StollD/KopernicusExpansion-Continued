@@ -35,7 +35,7 @@ namespace KopernicusExpansion
 
                 [PreApply]
                 [ParserTarget("Source", nameSignificance = NameSignificance.Type, optional = false)]
-                public NoiseLoader<IModule> sourceModule;
+                public NoiseLoader sourceModule;
 
                 public override void Apply(ConfigNode node)
                 {

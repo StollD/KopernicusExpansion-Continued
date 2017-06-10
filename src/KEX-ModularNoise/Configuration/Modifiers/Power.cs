@@ -13,11 +13,11 @@ namespace KopernicusExpansion
             {
                 [PreApply]
                 [ParserTarget("Base", nameSignificance = NameSignificance.Type, optional = false)]
-                public NoiseLoader<IModule> baseModule;
+                public NoiseLoader baseModule;
 
                 [PreApply]
                 [ParserTarget("Power", nameSignificance = NameSignificance.Type, optional = false)]
-                public NoiseLoader<IModule> powerModule;
+                public NoiseLoader powerModule;
 
                 public override void Apply(ConfigNode node)
                 {

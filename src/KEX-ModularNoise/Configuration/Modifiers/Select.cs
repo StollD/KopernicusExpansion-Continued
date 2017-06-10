@@ -22,15 +22,15 @@ namespace KopernicusExpansion
 
                 [PreApply]
                 [ParserTarget("Control", nameSignificance = NameSignificance.Type, optional = false)]
-                public NoiseLoader<IModule> controlModule;
+                public NoiseLoader controlModule;
 
                 [PreApply]
                 [ParserTarget("SourceA", nameSignificance = NameSignificance.Type, optional = false)]
-                public NoiseLoader<IModule> sourceModuleA;
+                public NoiseLoader sourceModuleA;
 
                 [PreApply]
                 [ParserTarget("SourceB", nameSignificance = NameSignificance.Type, optional = false)]
-                public NoiseLoader<IModule> sourceModuleB;
+                public NoiseLoader sourceModuleB;
 
                 public override void Apply(ConfigNode node)
                 {

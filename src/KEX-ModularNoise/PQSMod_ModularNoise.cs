@@ -8,11 +8,15 @@ namespace KopernicusExpansion
         /// <summary>
         /// A mod that applies a dynamic noise configuration to the terrain
         /// </summary>
-        public class PQSMod_ModularNoise : PQSMod
+        public class PQSMod_ModularNoise : SerializedPQSMod
         {
             public Double deformity;
-            public IModule noise;
             public Boolean normalizeHeight = true;
+            public IModule noise
+            {
+                get { return GetProperty<IModule>("noise"); }
+                set { SetProperty<IModule>("noise", value); }
+            }
 
             public override void OnVertexBuildHeight(PQS.VertexBuildData data)
             {

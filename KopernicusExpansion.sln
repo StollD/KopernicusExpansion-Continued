@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-EmissiveFX", "src\KEX-E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-EVAFootprints", "src\KEX-EVAFootprints\KEX-EVAFootprints.csproj", "{93A91F1C-A57E-46B2-B5CE-41B60A292BEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-ModularNoise", "src\KEX-ModularNoise\KEX-ModularNoise.csproj", "{D81FA961-8015-492C-B77D-499F94EA84F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{93A91F1C-A57E-46B2-B5CE-41B60A292BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93A91F1C-A57E-46B2-B5CE-41B60A292BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93A91F1C-A57E-46B2-B5CE-41B60A292BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D81FA961-8015-492C-B77D-499F94EA84F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D81FA961-8015-492C-B77D-499F94EA84F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D81FA961-8015-492C-B77D-499F94EA84F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D81FA961-8015-492C-B77D-499F94EA84F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

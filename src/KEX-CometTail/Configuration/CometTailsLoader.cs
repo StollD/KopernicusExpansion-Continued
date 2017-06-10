@@ -12,7 +12,7 @@ namespace KopernicusExpansion
             [ParserTargetExternal("Body", "CometTails", "Kopernicus")]
             public class CometTailsLoader : BaseLoader, IParserEventSubscriber
             {
-                [ParserTargetCollection("self", optional = true, nameSignificance = NameSignificance.None)]
+                [ParserTargetCollection("self", nameSignificance = NameSignificance.None)]
                 public List<CometTailLoader> tails = new List<CometTailLoader>();
 
                 // Apply Event

@@ -22,78 +22,91 @@ namespace KopernicusExpansion
                 [ParserTarget("type", optional = false)]
                 public EnumParser<CometTailType> type
                 {
-                    set { tail.type = value.value; }
+                    get { return tail.type; }
+                    set { tail.type = value; }
                 }
 
                 [ParserTarget("color")]
                 public ColorParser color
                 {
-                    set { tail.color = value.value; }
+                    get { return tail.color; }
+                    set { tail.color = value; }
                 }
 
                 [ParserTarget("rimPower")]
                 public NumericParser<float> rimPower
                 {
-                    set { tail.rimPower = value.value; }
+                    get { return tail.rimPower; }
+                    set { tail.rimPower = value; }
                 }
 
                 [ParserTarget("distortion")]
                 public NumericParser<float> distortion
                 {
-                    set { tail.distortion = value.value; }
+                    get { return tail.distortion; }
+                    set { tail.distortion = value; }
                 }
 
                 [ParserTarget("alphaDistortion")]
                 public NumericParser<float> alphaDistortion
                 {
-                    set { tail.alphaDistortion = value.value; }
+                    get { return tail.alphaDistortion; }
+                    set { tail.alphaDistortion = value; }
                 }
 
                 [ParserTarget("zDistortion")]
                 public NumericParser<float> zDistortion
                 {
-                    set { tail.zDistortion = value.value; }
+                    get { return tail.zDistortion; }
+                    set { tail.zDistortion = value; }
                 }
 
                 [ParserTarget("frequency")]
                 public NumericParser<float> frequency
                 {
-                    set { tail.frequency = value.value; }
+                    get { return tail.frequency; }
+                    set { tail.frequency = value; }
                 }
 
                 [ParserTarget("lacunarity")]
                 public NumericParser<float> lacunarity
                 {
-                    set { tail.lacunarity = value.value; }
+                    get { return tail.lacunarity; }
+                    set { tail.lacunarity = value; }
                 }
 
                 [ParserTarget("gain")]
                 public NumericParser<float> gain
                 {
+                    get { return tail.gain; }
                     set { tail.gain = value; }
                 }
 
                 [ParserTarget("radius")]
                 public NumericParser<float> radius
                 {
+                    get { return tail.radius; }
                     set { tail.radius = value; }
                 }
 
                 [ParserTarget("length")]
                 public NumericParser<float> maxLength
                 {
+                    get { return tail.length; }
                     set { tail.length = value; }
                 }
 
                 [ParserTarget("opacityCurve")]
                 public FloatCurveParser opacityCurve
                 {
+                    get { return tail.opacityCurve; }
                     set { tail.opacityCurve = value; }
                 }
 
                 [ParserTarget("brightnessCurve")]
                 public FloatCurveParser brightnessCurve
                 {
+                    get { return tail.brightnessCurve; }
                     set { tail.brightnessCurve = value; }
                 }
 

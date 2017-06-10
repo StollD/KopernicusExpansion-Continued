@@ -19,6 +19,7 @@ namespace KopernicusExpansion
                 [ParserTarget("emissiveMap")]
                 private Texture2DParser emissiveMap
                 {
+                    get { return (Texture2D)scaledMaterial.GetTexture("_EmissiveMap"); }
                     set { scaledMaterial.SetTexture("_EmissiveMap", value); }
                 }
 
@@ -26,6 +27,7 @@ namespace KopernicusExpansion
                 [ParserTarget("color", optional = false)]
                 private ColorParser color
                 {
+                    get { return scaledMaterial.GetColor("_Color"); }
                     set { scaledMaterial.SetColor("_Color", value); }
                 }
 
@@ -33,6 +35,7 @@ namespace KopernicusExpansion
                 [ParserTarget("brightness")]
                 private NumericParser<float> brightness
                 {
+                    get { return scaledMaterial.GetFloat("_Brightness"); }
                     set { scaledMaterial.SetFloat("_Brightness", value); }
                 }
 
@@ -40,6 +43,7 @@ namespace KopernicusExpansion
                 [ParserTarget("transparency")]
                 private NumericParser<float> transparency
                 {
+                    get { return scaledMaterial.GetFloat("_Transparency"); }
                     set { scaledMaterial.SetFloat("_Transparency", value); }
                 }
 

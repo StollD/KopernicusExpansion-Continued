@@ -17,6 +17,7 @@ namespace KopernicusExpansion
                 [ParserTarget("color", optional = false)]
                 private ColorParser PQScolor
                 {
+                    get { return mod.EmissiveMaterial.GetColor("_Color"); }
                     set { mod.EmissiveMaterial.SetColor("_Color", value); }
                 }
 
@@ -24,6 +25,7 @@ namespace KopernicusExpansion
                 [ParserTarget("brightness")]
                 private NumericParser<float> PQSbrightness
                 {
+                    get { return mod.EmissiveMaterial.GetFloat("_Brightness"); }
                     set { mod.EmissiveMaterial.SetFloat("_Brightness", value); }
                 }
 
@@ -31,6 +33,7 @@ namespace KopernicusExpansion
                 [ParserTarget("transparency")]
                 private NumericParser<float> PQStransparency
                 {
+                    get { return mod.EmissiveMaterial.GetFloat("_Transparency"); }
                     set { mod.EmissiveMaterial.SetFloat("_Transparency", value); }
                 }
 

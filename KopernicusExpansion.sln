@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-Common", "src\KEX-Commo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-EmissiveFX", "src\KEX-EmissiveFX\KEX-EmissiveFX.csproj", "{35BA2830-5953-4D7A-9C7B-4FE3D5FBD55F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-EVAFootprints", "src\KEX-EVAFootprints\KEX-EVAFootprints.csproj", "{93A91F1C-A57E-46B2-B5CE-41B60A292BEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{35BA2830-5953-4D7A-9C7B-4FE3D5FBD55F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35BA2830-5953-4D7A-9C7B-4FE3D5FBD55F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35BA2830-5953-4D7A-9C7B-4FE3D5FBD55F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93A91F1C-A57E-46B2-B5CE-41B60A292BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93A91F1C-A57E-46B2-B5CE-41B60A292BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93A91F1C-A57E-46B2-B5CE-41B60A292BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93A91F1C-A57E-46B2-B5CE-41B60A292BEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

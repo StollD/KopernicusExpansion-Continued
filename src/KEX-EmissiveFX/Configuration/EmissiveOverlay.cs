@@ -9,7 +9,7 @@ namespace KopernicusExpansion
     {
         namespace Configuration
         {
-            [ParserTargetExternal("ScaledVersion", "EmissiveOverlay")]
+            [ParserTargetExternal("ScaledVersion", "EmissiveOverlay", "Kopernicus")]
             public class EmissiveOverlay : BaseLoader, IParserEventSubscriber
             {
                 // The new material for the scaled space renderer

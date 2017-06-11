@@ -50,9 +50,17 @@ namespace KopernicusExpansion
                 if (target != null)
                 {
                     // look at target
-                    var rot = Quaternion.LookRotation((target.position - transform.position).normalized);
-                    transform.rotation = rot;
-
+                    if (type == CometTailType.Ion)
+                    {
+                        Quaternion rot = Quaternion.LookRotation((target.position - transform.position).normalized);
+                        transform.rotation = rot;
+                    }
+                    else
+                    {
+                        Vector3 orbitVector = (orbit.getPositionAtUT(Planetarium.GetUniversalTime() + 1) - orbit.getPositionAtUT(Planetarium.GetUniversalTime())) * 0.00001f;
+                        Vector3 lookVector = Vector3.Normalize(orbitVector - (Vector3.Normalize(transform.position - target.position) * 0.5f));
+                        transform.LookAt(transform.position + lookVector * 100);
+                    }
                     // TODO: make dust trails deflect from solar wind
                 }
                 else

@@ -41,10 +41,10 @@ namespace KopernicusExpansion
                     obj.layer = GameLayers.ScaledSpace;
                     obj.transform.parent = Kopernicus.Utility.Deactivator;
 
-                    var mr = obj.AddComponent<MeshRenderer>();
-                    var mf = obj.AddComponent<MeshFilter>();
+                    MeshRenderer mr = obj.AddComponent<MeshRenderer>();
+                    MeshFilter mf = obj.AddComponent<MeshFilter>();
 
-                    var teardrop = new Teardrop(1f, (tail.length / tail.radius), 60, 90);
+                    Teardrop teardrop = new Teardrop(1f, (tail.length / tail.radius), 60, 90);
                     mf.mesh = teardrop;
 
                     mr.sharedMaterial = new Material(ShaderLoader.GetShader("KopernicusExpansion/CometTail"));
@@ -64,7 +64,7 @@ namespace KopernicusExpansion
                     mr.shadowCastingMode = ShadowCastingMode.Off;
                     mr.receiveShadows = false;
 
-                    var cometController = obj.AddComponent<CometTailController>();
+                    CometTailController cometController = obj.AddComponent<CometTailController>();
                     cometController.type = tail.type;
                     cometController.color = tail.color;
                     cometController.orbit = body.celestialBody.orbit;

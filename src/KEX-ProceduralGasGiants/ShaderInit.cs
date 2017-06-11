@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace KopernicusExpansion
 {
-    namespace EVAFootprints
+    namespace ProceduralGasGiants
     {
         [KSPAddon(KSPAddon.Startup.Instantly, true)]
         public class ShaderInit : MonoBehaviour
         {
             void Awake()
             {
-                ShaderLoader.LoadAssetBundle("KopernicusExpansion/Shaders", "footprints");
+                ShaderLoader.LoadAssetBundle("KopernicusExpansion/Shaders", "proceduralgasgiants");
             }
         }
     }

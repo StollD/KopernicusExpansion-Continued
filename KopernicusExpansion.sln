@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-EVAFootprints", "src\KE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-ModularNoise", "src\KEX-ModularNoise\KEX-ModularNoise.csproj", "{D81FA961-8015-492C-B77D-499F94EA84F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-ProceduralGasGiants", "src\KEX-ProceduralGasGiants\KEX-ProceduralGasGiants.csproj", "{A4B6C205-F20F-4C90-BBE9-42DA414EEC8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D81FA961-8015-492C-B77D-499F94EA84F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D81FA961-8015-492C-B77D-499F94EA84F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D81FA961-8015-492C-B77D-499F94EA84F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4B6C205-F20F-4C90-BBE9-42DA414EEC8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4B6C205-F20F-4C90-BBE9-42DA414EEC8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4B6C205-F20F-4C90-BBE9-42DA414EEC8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4B6C205-F20F-4C90-BBE9-42DA414EEC8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

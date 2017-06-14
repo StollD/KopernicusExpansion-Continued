@@ -2,6 +2,7 @@
 using Kopernicus.Configuration;
 using Kopernicus.Constants;
 using KopernicusExpansion.Geometry;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;

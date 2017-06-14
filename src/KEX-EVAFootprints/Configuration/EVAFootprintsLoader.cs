@@ -14,8 +14,8 @@ namespace KopernicusExpansion
                 [ParserTarget("allowFootprints")]
                 public NumericParser<bool> allowFootprints
                 {
-                    get { return FootprintSpawner.FootprintsAllowed.Contains(generatedBody.celestialBody); }
-                    set { if (value) { FootprintSpawner.FootprintsAllowed.Add(generatedBody.celestialBody); } }
+                    get { return FootprintSpawner.FootprintsAllowed.Contains(generatedBody.celestialBody.transform.name); }
+                    set { if (value) { FootprintSpawner.FootprintsAllowed.Add(generatedBody.celestialBody.transform.name); } }
                 }
                 
                 // Apply event

@@ -14,7 +14,7 @@ namespace KopernicusExpansion
         public class FootprintSpawner : MonoBehaviour
         {
             // A list of all bodies where kerbals leave footprints
-            public static List<CelestialBody> FootprintsAllowed = new List<CelestialBody>();
+            public static List<String> FootprintsAllowed = new List<String>();
 
             public static GameObject footprintPrefab { get; private set; }
             private static void SetupFootprintPrefab()

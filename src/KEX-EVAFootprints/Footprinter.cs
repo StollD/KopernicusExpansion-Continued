@@ -36,7 +36,7 @@ namespace KopernicusExpansion
                 while (true)
                 {
                     // don't footprint non-footprintable bodies
-                    if (!FootprintSpawner.FootprintsAllowed.Contains(FlightGlobals.currentMainBody))
+                    if (!FootprintSpawner.FootprintsAllowed.Contains(FlightGlobals.currentMainBody.transform.name))
                         yield return null;
 
                     String state = eva.fsm.CurrentState.name;
@@ -70,7 +70,7 @@ namespace KopernicusExpansion
             {
                 RaycastHit hit;
                 Ray ray = new Ray(transform.position, FlightGlobals.getGeeForceAtPosition(part.vessel.GetWorldPos3D()).normalized);
-                if (Physics.Raycast(ray, out hit, 0.25f, (1 << GameLayers.LocalSpace)))
+                if (Physics.Raycast(ray, out hit, 2f, (1 << GameLayers.LocalSpace)))
                 {
                     // don't add footprints to non-terrain features
                     if (hit.transform.GetComponent<PQ>() == null)

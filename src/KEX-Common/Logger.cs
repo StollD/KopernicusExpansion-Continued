@@ -49,7 +49,7 @@ namespace KopernicusExpansion
         // ==> Implement own version
         public static string version
         {
-            get { return "v2"; }
+            get { return "1.3.1-1"; }
         }
 
         // Default logger

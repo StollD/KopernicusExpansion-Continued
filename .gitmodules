@@ -1,0 +1,3 @@
+[submodule "src/external/mcs-ICodeCompiler"]
+	path = src/external/mcs-ICodeCompiler
+	url = https://github.com/aeroson/mcs-ICodeCompiler

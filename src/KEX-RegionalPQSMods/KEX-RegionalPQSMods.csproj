@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BB279332-FCFA-450D-9BFB-5D65EB7A246A}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KEX-RegionalPQSMods</RootNamespace>
+    <AssemblyName>KEX-RegionalPQSMods</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <LangVersion>7</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Assembly-CSharp.1.3.1\lib\net35\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Kopernicus, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Kopernicus.1.3.1.3\lib\net35\Kopernicus.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Kopernicus.Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Kopernicus.Components.1.3.1.3\lib\net35\Kopernicus.Components.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Kopernicus.OnDemand, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Kopernicus.OnDemand.1.3.1.3\lib\net35\Kopernicus.OnDemand.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Kopernicus.Parser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Kopernicus.Parser.1.3.1.3\lib\net35\Kopernicus.Parser.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="ModularFlightIntegrator, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\ModularFlightIntegrator.1.2.4\lib\net35\ModularFlightIntegrator.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="RunSharp, Version=1.0.0.19, Culture=neutral, PublicKeyToken=be9f22c3116c2290">
+      <HintPath>..\..\packages\aqla.runsharp.1.0.0.19\lib\net35\RunSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UnityEngine.1.3.1\lib\net35\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UnityEngine.UI.1.3.1\lib\net35\UnityEngine.UI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PQSModCreator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-ModularNoise", "src\KEX
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-ProceduralGasGiants", "src\KEX-ProceduralGasGiants\KEX-ProceduralGasGiants.csproj", "{A4B6C205-F20F-4C90-BBE9-42DA414EEC8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-RegionalPQSMods", "src\KEX-RegionalPQSMods\KEX-RegionalPQSMods.csproj", "{BB279332-FCFA-450D-9BFB-5D65EB7A246A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{A4B6C205-F20F-4C90-BBE9-42DA414EEC8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4B6C205-F20F-4C90-BBE9-42DA414EEC8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4B6C205-F20F-4C90-BBE9-42DA414EEC8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB279332-FCFA-450D-9BFB-5D65EB7A246A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB279332-FCFA-450D-9BFB-5D65EB7A246A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB279332-FCFA-450D-9BFB-5D65EB7A246A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB279332-FCFA-450D-9BFB-5D65EB7A246A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

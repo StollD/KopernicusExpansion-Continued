@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-ProceduralGasGiants", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-RegionalPQSMods", "src\KEX-RegionalPQSMods\KEX-RegionalPQSMods.csproj", "{BB279332-FCFA-450D-9BFB-5D65EB7A246A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-VertexHeightMap32", "src\KEX-VertexHeightMap32\KEX-VertexHeightMap32.csproj", "{8CDE04F9-63DE-4805-9776-635906680E5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{BB279332-FCFA-450D-9BFB-5D65EB7A246A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB279332-FCFA-450D-9BFB-5D65EB7A246A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB279332-FCFA-450D-9BFB-5D65EB7A246A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CDE04F9-63DE-4805-9776-635906680E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CDE04F9-63DE-4805-9776-635906680E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CDE04F9-63DE-4805-9776-635906680E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CDE04F9-63DE-4805-9776-635906680E5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

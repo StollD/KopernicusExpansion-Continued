@@ -48,6 +48,14 @@ namespace KopernicusExpansion
                 get { return mod.depth; }
                 set { mod.depth = value; }
             }
+            
+            // How large should the difference between the single levels of detail be
+            [ParserTarget("exponent")]
+            public NumericParser<Double> exponent
+            {
+                get { return mod.exponent; }
+                set { mod.exponent = value; }
+            }
         }
     }
 }

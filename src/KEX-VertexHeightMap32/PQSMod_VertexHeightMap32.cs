@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace KopernicusExpansion
 {
@@ -14,6 +15,11 @@ namespace KopernicusExpansion
             /// </summary>
             public MapSO.MapDepth depth;
 
+            /// <summary>
+            /// How large should the difference between the single levels of detail be
+            /// </summary>
+            public Double exponent = 2;
+
             public override void OnVertexBuildHeight(PQS.VertexBuildData data)
             {
                 // Get the Color, not the Float-Value from the Map
@@ -27,18 +33,15 @@ namespace KopernicusExpansion
                 }
                 else if (depth == MapSO.MapDepth.HeightAlpha)
                 {
-                    height = c.r + c.a * 255d;
-                    height *= 1d / 255d;
+                    height = c.r + c.a / 255d;
                 }
                 else if (depth == MapSO.MapDepth.RGB)
                 {
-                    height = c.r + c.g * 255d + c.b * (255d * 255d);
-                    height *= 1d / (255d * 255d);
+                    height = c.r + c.g / 255d + c.b / (255d * exponent);
                 }
                 else if (depth == MapSO.MapDepth.RGBA)
                 {
-                    height = c.r + c.g * 255d + c.b * (255d * 255d) + c.a * (255d * 255d * 255d);
-                    height *= 1d / (255d * 255d * 255d);
+                    height = c.r + c.g / 255d + c.b / (255d  * exponent) + c.a * (255d  * exponent * exponent);
                 }
                 else
                 {

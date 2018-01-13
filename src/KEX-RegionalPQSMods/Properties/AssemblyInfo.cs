@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("KEX-RegionalPQSMods")]
 [assembly: AssemblyDescription("Regionally limited PQSMod wrappers")]
 [assembly: AssemblyProduct("KEX-RegionalPQSMods")]
-[assembly: AssemblyCopyright("Copyright © Mr. HappyFace, Thomas P. 2017")]
+[assembly: AssemblyCopyright("Copyright © Thomas P. 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

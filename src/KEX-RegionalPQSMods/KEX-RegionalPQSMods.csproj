@@ -8,7 +8,7 @@
     <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KEX-RegionalPQSMods</RootNamespace>
+    <RootNamespace>KEX_RegionalPQSMods</RootNamespace>
     <AssemblyName>KEX-RegionalPQSMods</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

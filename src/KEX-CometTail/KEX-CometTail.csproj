@@ -36,15 +36,19 @@
     </Reference>
     <Reference Include="Kopernicus, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\packages\Kopernicus.1.3.1.6\lib\net35\Kopernicus.dll</HintPath>
+      <Private>false</Private>
     </Reference>
     <Reference Include="Kopernicus.Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\packages\Kopernicus.Components.1.3.1.6\lib\net35\Kopernicus.Components.dll</HintPath>
+      <Private>false</Private>
     </Reference>
     <Reference Include="Kopernicus.OnDemand, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\packages\Kopernicus.OnDemand.1.3.1.6\lib\net35\Kopernicus.OnDemand.dll</HintPath>
+      <Private>false</Private>
     </Reference>
     <Reference Include="Kopernicus.Parser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\packages\Kopernicus.Parser.1.3.1.6\lib\net35\Kopernicus.Parser.dll</HintPath>
+      <Private>false</Private>
     </Reference>
     <Reference Include="ModularFlightIntegrator, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\packages\ModularFlightIntegrator.1.2.4\lib\net35\ModularFlightIntegrator.dll</HintPath>

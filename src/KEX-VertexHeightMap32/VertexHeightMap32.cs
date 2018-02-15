@@ -50,11 +50,11 @@ namespace KopernicusExpansion
             }
             
             // How large should the difference between the single levels of detail be
-            [ParserTarget("exponent")]
+            [ParserTarget("level")]
             public NumericParser<Double> exponent
             {
-                get { return mod.exponent; }
-                set { mod.exponent = value; }
+                get { return mod.level; }
+                set { mod.level = value; }
             }
         }
     }

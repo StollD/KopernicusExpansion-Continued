@@ -18,7 +18,7 @@ namespace KopernicusExpansion
             /// <summary>
             /// How large should the difference between the single levels of detail be
             /// </summary>
-            public Double exponent = 2;
+            public Double level = 2;
 
             public override void OnVertexBuildHeight(PQS.VertexBuildData data)
             {
@@ -37,11 +37,11 @@ namespace KopernicusExpansion
                 }
                 else if (depth == MapSO.MapDepth.RGB)
                 {
-                    height = c.r + c.g / 255d + c.b / (255d * exponent);
+                    height = c.r + c.g / 255d + c.b / (255d * level);
                 }
                 else if (depth == MapSO.MapDepth.RGBA)
                 {
-                    height = c.r + c.g / 255d + c.b / (255d  * exponent) + c.a * (255d  * exponent * exponent);
+                    height = c.r + c.g / 255d + c.b / (255d  * level) + c.a * (255d  * level * level);
                 }
                 else
                 {

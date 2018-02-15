@@ -1,4 +1,5 @@
-﻿using KopernicusExpansion.Noise;
+﻿using System;
+using KopernicusExpansion.Noise;
 using UnityEngine;
 
 namespace KopernicusExpansion
@@ -9,11 +10,11 @@ namespace KopernicusExpansion
         {
             public class ProceduralGasGiant : MonoBehaviour
             {
-                private const float MaxTime = 10000;
+                private const Single MaxTime = 10000;
 
-                public int seed = 0;
-                public float speed = 0.002f;
-                public bool doAnimate = true;
+                public Int32 seed = 0;
+                public Single speed = 0.002f;
+                public Boolean doAnimate = true;
 
                 private ImprovedPerlinNoise noise;
 
@@ -30,7 +31,7 @@ namespace KopernicusExpansion
                     renderer.material.SetFloat("_Evolution", currentTime);
                 }
 
-                private float currentTime = 0f;
+                private Single currentTime = 0f;
                 void LateUpdate()
                 {
                     if (doAnimate)

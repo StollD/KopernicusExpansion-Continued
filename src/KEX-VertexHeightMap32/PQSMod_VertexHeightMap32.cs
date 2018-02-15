@@ -26,7 +26,7 @@ namespace KopernicusExpansion
                 Color32 c = heightMap.GetPixelColor32(data.u, data.v);
 
                 // Build the height from the Color
-                double height = 0;
+                Double height = 0;
                 if (depth == MapSO.MapDepth.Greyscale)
                 {
                     height = c.r;

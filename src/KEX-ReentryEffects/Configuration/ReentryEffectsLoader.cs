@@ -12,17 +12,17 @@ namespace KopernicusExpansion
             [RequireConfigType(ConfigType.Node)]
             public class ReentryEffectsLoader : BaseLoader
             {
-                [ParserTarget("ReentryHeat", allowMerge = true)]
+                [ParserTarget("ReentryHeat", AllowMerge = true)]
                 public AeroFxLoader reentryHeat
                 {
-                    get { return generatedBody.Get<AeroFXState>("reentryHeat"); }
+                    get { return generatedBody.Get<AeroFXState>("reentryHeat", null); }
                     set { generatedBody.Set("reentryHeat", value.Value); }
                 }
                 
-                [ParserTarget("Condensation", allowMerge = true)]
+                [ParserTarget("Condensation", AllowMerge = true)]
                 public AeroFxLoader condensation
                 {
-                    get { return generatedBody.Get<AeroFXState>("condensation"); }
+                    get { return generatedBody.Get<AeroFXState>("condensation", null); }
                     set { generatedBody.Set("condensation", value.Value); }
                 }
 

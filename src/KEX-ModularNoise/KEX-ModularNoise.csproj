@@ -35,20 +35,16 @@
       <Private>false</Private>
     </Reference>
     <Reference Include="Kopernicus, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\Kopernicus.1.3.1.3\lib\net35\Kopernicus.dll</HintPath>
-      <Private>false</Private>
+      <HintPath>..\..\packages\Kopernicus.1.3.1.6\lib\net35\Kopernicus.dll</HintPath>
     </Reference>
     <Reference Include="Kopernicus.Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\Kopernicus.Components.1.3.1.3\lib\net35\Kopernicus.Components.dll</HintPath>
-      <Private>false</Private>
+      <HintPath>..\..\packages\Kopernicus.Components.1.3.1.6\lib\net35\Kopernicus.Components.dll</HintPath>
     </Reference>
     <Reference Include="Kopernicus.OnDemand, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\Kopernicus.OnDemand.1.3.1.3\lib\net35\Kopernicus.OnDemand.dll</HintPath>
-      <Private>false</Private>
+      <HintPath>..\..\packages\Kopernicus.OnDemand.1.3.1.6\lib\net35\Kopernicus.OnDemand.dll</HintPath>
     </Reference>
     <Reference Include="Kopernicus.Parser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\Kopernicus.Parser.1.3.1.3\lib\net35\Kopernicus.Parser.dll</HintPath>
-      <Private>false</Private>
+      <HintPath>..\..\packages\Kopernicus.Parser.1.3.1.6\lib\net35\Kopernicus.Parser.dll</HintPath>
     </Reference>
     <Reference Include="ModularFlightIntegrator, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\packages\ModularFlightIntegrator.1.2.4\lib\net35\ModularFlightIntegrator.dll</HintPath>
@@ -66,41 +62,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\Modifiers\TranslateInput.cs" />
-    <Compile Include="Configuration\Modifiers\Terrace.cs" />
-    <Compile Include="Configuration\Modifiers\SmallerOutput.cs" />
-    <Compile Include="Configuration\Modifiers\Select.cs" />
-    <Compile Include="Configuration\Modifiers\ScaleOutput.cs" />
-    <Compile Include="Configuration\Modifiers\ScaleInput.cs" />
-    <Compile Include="Configuration\Modifiers\ScaleBiasOutput.cs" />
-    <Compile Include="Configuration\Modifiers\RotateInput.cs" />
-    <Compile Include="Configuration\Modifiers\Power.cs" />
-    <Compile Include="Configuration\Modifiers\Multiply.cs" />
-    <Compile Include="Configuration\Modifiers\LargerOutput.cs" />
-    <Compile Include="Configuration\Modifiers\InvertOutput.cs" />
-    <Compile Include="Configuration\Modifiers\InvertInput.cs" />
-    <Compile Include="Configuration\Modifiers\AbsoluteOutput.cs" />
-    <Compile Include="Configuration\Modifiers\ExponentialOutput.cs" />
-    <Compile Include="Configuration\Modifiers\DisplaceInput.cs" />
-    <Compile Include="Configuration\Modifiers\Constant.cs" />
-    <Compile Include="Configuration\Modifiers\ClampOutput.cs" />
-    <Compile Include="Configuration\Modifiers\Blend.cs" />
-    <Compile Include="Configuration\Modifiers\BiasOutput.cs" />
-    <Compile Include="Configuration\Modifiers\Add.cs" />
     <Compile Include="Configuration\ModularNoise.cs" />
     <Compile Include="Configuration\NoiseLoader.cs" />
-    <Compile Include="Configuration\Noise\Voronoi.cs" />
-    <Compile Include="Configuration\Noise\Turbulence.cs" />
-    <Compile Include="Configuration\Noise\Spheres.cs" />
-    <Compile Include="Configuration\Noise\RidgedMultifractal.cs" />
-    <Compile Include="Configuration\Noise\Perlin.cs" />
-    <Compile Include="Configuration\Noise\FastTurbulence.cs" />
-    <Compile Include="Configuration\Noise\FastRidgedMultifractal.cs" />
-    <Compile Include="Configuration\Noise\FastNoise.cs" />
-    <Compile Include="Configuration\Noise\FastBillow.cs" />
-    <Compile Include="Configuration\Noise\Cylinders.cs" />
-    <Compile Include="Configuration\Noise\Checkerboard.cs" />
-    <Compile Include="Configuration\Noise\Billow.cs" />
     <Compile Include="PQSMod_ModularNoise.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

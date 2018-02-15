@@ -1,4 +1,5 @@
-﻿using Kopernicus;
+﻿using System;
+using Kopernicus;
 using Kopernicus.Configuration;
 using Kopernicus.Configuration.ModLoader;
 
@@ -12,7 +13,7 @@ namespace KopernicusExpansion
             public class KerbalEVAFootprints : BaseLoader, IParserEventSubscriber
             {
                 [ParserTarget("allowFootprints")]
-                public NumericParser<bool> allowFootprints
+                public NumericParser<Boolean> allowFootprints
                 {
                     get { return FootprintSpawner.FootprintsAllowed.Contains(generatedBody.celestialBody.transform.name); }
                     set { if (value) { FootprintSpawner.FootprintsAllowed.Add(generatedBody.celestialBody.transform.name); } }

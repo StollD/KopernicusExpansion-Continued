@@ -41,7 +41,7 @@ namespace KopernicusExpansion
                 Debug.Log("[KopernicusExpansion] Footprint prefab created");
             }
 
-            public static int TotalFootprints
+            public static Int32 TotalFootprints
             {
                 get
                 {

@@ -1,4 +1,5 @@
-﻿using Kopernicus;
+﻿using System;
+using Kopernicus;
 using KopernicusExpansion.CometTail.Effects;
 
 namespace KopernicusExpansion
@@ -19,7 +20,7 @@ namespace KopernicusExpansion
                 public Tail tail;
 
                 [PreApply]
-                [ParserTarget("type", optional = false)]
+                [ParserTarget("type", Optional = false)]
                 public EnumParser<CometTailType> type
                 {
                     get { return tail.type; }
@@ -34,63 +35,63 @@ namespace KopernicusExpansion
                 }
 
                 [ParserTarget("rimPower")]
-                public NumericParser<float> rimPower
+                public NumericParser<Single> rimPower
                 {
                     get { return tail.rimPower; }
                     set { tail.rimPower = value; }
                 }
 
                 [ParserTarget("distortion")]
-                public NumericParser<float> distortion
+                public NumericParser<Single> distortion
                 {
                     get { return tail.distortion; }
                     set { tail.distortion = value; }
                 }
 
                 [ParserTarget("alphaDistortion")]
-                public NumericParser<float> alphaDistortion
+                public NumericParser<Single> alphaDistortion
                 {
                     get { return tail.alphaDistortion; }
                     set { tail.alphaDistortion = value; }
                 }
 
                 [ParserTarget("zDistortion")]
-                public NumericParser<float> zDistortion
+                public NumericParser<Single> zDistortion
                 {
                     get { return tail.zDistortion; }
                     set { tail.zDistortion = value; }
                 }
 
                 [ParserTarget("frequency")]
-                public NumericParser<float> frequency
+                public NumericParser<Single> frequency
                 {
                     get { return tail.frequency; }
                     set { tail.frequency = value; }
                 }
 
                 [ParserTarget("lacunarity")]
-                public NumericParser<float> lacunarity
+                public NumericParser<Single> lacunarity
                 {
                     get { return tail.lacunarity; }
                     set { tail.lacunarity = value; }
                 }
 
                 [ParserTarget("gain")]
-                public NumericParser<float> gain
+                public NumericParser<Single> gain
                 {
                     get { return tail.gain; }
                     set { tail.gain = value; }
                 }
 
                 [ParserTarget("radius")]
-                public NumericParser<float> radius
+                public NumericParser<Single> radius
                 {
                     get { return tail.radius; }
                     set { tail.radius = value; }
                 }
 
                 [ParserTarget("length")]
-                public NumericParser<float> maxLength
+                public NumericParser<Single> maxLength
                 {
                     get { return tail.length; }
                     set { tail.length = value; }
@@ -120,7 +121,7 @@ namespace KopernicusExpansion
                     tail.opacityCurve.Add(1.25e10f, 0.1f);
                     tail.opacityCurve.Add(2e10f, 0.0075f);
                     tail.opacityCurve.Add(3e10f, 0f);
-                    tail.opacityCurve.Add(float.MaxValue, 0f);
+                    tail.opacityCurve.Add(Single.MaxValue, 0f);
 
                     if (tail.type == CometTailType.Ion)
                     {
@@ -130,7 +131,7 @@ namespace KopernicusExpansion
                         tail.brightnessCurve.Add(1.25e10f, 0.09f);
                         tail.brightnessCurve.Add(2e10f, 0.0075f);
                         tail.brightnessCurve.Add(3e10f, 0f);
-                        tail.brightnessCurve.Add(float.MaxValue, 0f);
+                        tail.brightnessCurve.Add(Single.MaxValue, 0f);
                     }
                     else
                     {
@@ -140,7 +141,7 @@ namespace KopernicusExpansion
                         tail.brightnessCurve.Add(1.25e10f, 0.1f);
                         tail.brightnessCurve.Add(2e10f, 0.008f);
                         tail.brightnessCurve.Add(3e10f, 0f);
-                        tail.brightnessCurve.Add(float.MaxValue, 0f);
+                        tail.brightnessCurve.Add(Single.MaxValue, 0f);
                     }
                 }
 

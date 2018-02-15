@@ -1,4 +1,5 @@
-﻿using Kopernicus;
+﻿using System;
+using Kopernicus;
 using Kopernicus.Components;
 using Kopernicus.Configuration;
 using UnityEngine;
@@ -24,7 +25,7 @@ namespace KopernicusExpansion
                 }
 
                 // The color of the emission
-                [ParserTarget("color", optional = false)]
+                [ParserTarget("color", Optional = false)]
                 private ColorParser color
                 {
                     get { return scaledMaterial.GetColor("_Color"); }
@@ -33,7 +34,7 @@ namespace KopernicusExpansion
 
                 // How bright should the emission be?
                 [ParserTarget("brightness")]
-                private NumericParser<float> brightness
+                private NumericParser<Single> brightness
                 {
                     get { return scaledMaterial.GetFloat("_Brightness"); }
                     set { scaledMaterial.SetFloat("_Brightness", value); }
@@ -41,7 +42,7 @@ namespace KopernicusExpansion
 
                 // How much of the original texture should be visible?
                 [ParserTarget("transparency")]
-                private NumericParser<float> transparency
+                private NumericParser<Single> transparency
                 {
                     get { return scaledMaterial.GetFloat("_Transparency"); }
                     set { scaledMaterial.SetFloat("_Transparency", value); }

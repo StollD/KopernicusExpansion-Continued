@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace KopernicusExpansion
 {
@@ -6,8 +8,8 @@ namespace KopernicusExpansion
     {
         public class ImprovedPerlinNoise
         {
-            const int SIZE = 256;
-            int[] m_perm = new int[SIZE + SIZE];
+            const Int32 SIZE = 256;
+            Int32[] m_perm = new Int32[SIZE + SIZE];
             Texture2D m_permTable1D, m_permTable2D, m_gradient2D, m_gradient3D, m_gradient4D;
 
             public Texture2D GetPermutationTable1D() { return m_permTable1D; }
@@ -16,11 +18,11 @@ namespace KopernicusExpansion
             public Texture2D GetGradient3D() { return m_gradient3D; }
             public Texture2D GetGradient4D() { return m_gradient4D; }
 
-            public ImprovedPerlinNoise(int seed)
+            public ImprovedPerlinNoise(Int32 seed)
             {
                 Random.InitState(seed);
 
-                int i, j, k;
+                Int32 i, j, k;
                 for (i = 0; i < SIZE; i++)
                 {
                     m_perm[i] = i;
@@ -68,9 +70,9 @@ namespace KopernicusExpansion
                 m_permTable1D.filterMode = FilterMode.Point;
                 m_permTable1D.wrapMode = TextureWrapMode.Repeat;
 
-                for (int x = 0; x < SIZE; x++)
+                for (Int32 x = 0; x < SIZE; x++)
                 {
-                    m_permTable1D.SetPixel(x, 1, new Color(0, 0, 0, (float)m_perm[x] / (float)(SIZE - 1)));
+                    m_permTable1D.SetPixel(x, 1, new Color(0, 0, 0, (Single)m_perm[x] / (Single)(SIZE - 1)));
                 }
 
                 m_permTable1D.Apply();
@@ -85,19 +87,19 @@ namespace KopernicusExpansion
                 m_permTable2D.filterMode = FilterMode.Point;
                 m_permTable2D.wrapMode = TextureWrapMode.Repeat;
 
-                for (int x = 0; x < SIZE; x++)
+                for (Int32 x = 0; x < SIZE; x++)
                 {
-                    for (int y = 0; y < SIZE; y++)
+                    for (Int32 y = 0; y < SIZE; y++)
                     {
-                        int A = m_perm[x] + y;
-                        int AA = m_perm[A];
-                        int AB = m_perm[A + 1];
+                        Int32 A = m_perm[x] + y;
+                        Int32 AA = m_perm[A];
+                        Int32 AB = m_perm[A + 1];
 
-                        int B = m_perm[x + 1] + y;
-                        int BA = m_perm[B];
-                        int BB = m_perm[B + 1];
+                        Int32 B = m_perm[x + 1] + y;
+                        Int32 BA = m_perm[B];
+                        Int32 BB = m_perm[B + 1];
 
-                        m_permTable2D.SetPixel(x, y, new Color((float)AA / 255.0f, (float)AB / 255.0f, (float)BA / 255.0f, (float)BB / 255.0f));
+                        m_permTable2D.SetPixel(x, y, new Color((Single)AA / 255.0f, (Single)AB / 255.0f, (Single)BA / 255.0f, (Single)BB / 255.0f));
                     }
                 }
 
@@ -112,10 +114,10 @@ namespace KopernicusExpansion
                 m_gradient2D.filterMode = FilterMode.Point;
                 m_gradient2D.wrapMode = TextureWrapMode.Repeat;
 
-                for (int i = 0; i < 8; i++)
+                for (Int32 i = 0; i < 8; i++)
                 {
-                    float R = (GRADIENT2[i * 2 + 0] + 1.0f) * 0.5f;
-                    float G = (GRADIENT2[i * 2 + 1] + 1.0f) * 0.5f;
+                    Single R = (GRADIENT2[i * 2 + 0] + 1.0f) * 0.5f;
+                    Single G = (GRADIENT2[i * 2 + 1] + 1.0f) * 0.5f;
 
                     m_gradient2D.SetPixel(i, 0, new Color(R, G, 0, 1));
                 }
@@ -132,13 +134,13 @@ namespace KopernicusExpansion
                 m_gradient3D.filterMode = FilterMode.Point;
                 m_gradient3D.wrapMode = TextureWrapMode.Repeat;
 
-                for (int i = 0; i < SIZE; i++)
+                for (Int32 i = 0; i < SIZE; i++)
                 {
-                    int idx = m_perm[i] % 16;
+                    Int32 idx = m_perm[i] % 16;
 
-                    float R = (GRADIENT3[idx * 3 + 0] + 1.0f) * 0.5f;
-                    float G = (GRADIENT3[idx * 3 + 1] + 1.0f) * 0.5f;
-                    float B = (GRADIENT3[idx * 3 + 2] + 1.0f) * 0.5f;
+                    Single R = (GRADIENT3[idx * 3 + 0] + 1.0f) * 0.5f;
+                    Single G = (GRADIENT3[idx * 3 + 1] + 1.0f) * 0.5f;
+                    Single B = (GRADIENT3[idx * 3 + 2] + 1.0f) * 0.5f;
 
                     m_gradient3D.SetPixel(i, 0, new Color(R, G, B, 1));
                 }
@@ -155,14 +157,14 @@ namespace KopernicusExpansion
                 m_gradient4D.filterMode = FilterMode.Point;
                 m_gradient4D.wrapMode = TextureWrapMode.Repeat;
 
-                for (int i = 0; i < SIZE; i++)
+                for (Int32 i = 0; i < SIZE; i++)
                 {
-                    int idx = m_perm[i] % 32;
+                    Int32 idx = m_perm[i] % 32;
 
-                    float R = (GRADIENT4[idx * 4 + 0] + 1.0f) * 0.5f;
-                    float G = (GRADIENT4[idx * 4 + 1] + 1.0f) * 0.5f;
-                    float B = (GRADIENT4[idx * 4 + 2] + 1.0f) * 0.5f;
-                    float A = (GRADIENT4[idx * 4 + 3] + 1.0f) * 0.5f;
+                    Single R = (GRADIENT4[idx * 4 + 0] + 1.0f) * 0.5f;
+                    Single G = (GRADIENT4[idx * 4 + 1] + 1.0f) * 0.5f;
+                    Single B = (GRADIENT4[idx * 4 + 2] + 1.0f) * 0.5f;
+                    Single A = (GRADIENT4[idx * 4 + 3] + 1.0f) * 0.5f;
 
                     m_gradient4D.SetPixel(i, 0, new Color(R, G, B, A));
                 }
@@ -171,7 +173,7 @@ namespace KopernicusExpansion
 
             }
 
-            static float[] GRADIENT2 = new float[]
+            static Single[] GRADIENT2 = new Single[]
             {
             0, 1,
             1, 1,
@@ -183,7 +185,7 @@ namespace KopernicusExpansion
             -1, 1,
             };
 
-            static float[] GRADIENT3 = new float[]
+            static Single[] GRADIENT3 = new Single[]
             {
             1,1,0,
             -1,1,0,
@@ -203,7 +205,7 @@ namespace KopernicusExpansion
             0,-1,-1,
             };
 
-            static float[] GRADIENT4 = new float[]
+            static Single[] GRADIENT4 = new Single[]
             {
             0, -1, -1, -1,
             0, -1, -1, 1,

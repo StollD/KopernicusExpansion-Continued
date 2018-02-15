@@ -14,7 +14,7 @@ namespace KopernicusExpansion
             public class EmissiveFX : ModLoader<PQSMod_EmissiveFX>, IParserEventSubscriber
             {
                 // The color of the emission
-                [ParserTarget("color", optional = false)]
+                [ParserTarget("color", Optional = false)]
                 private ColorParser PQScolor
                 {
                     get { return mod.EmissiveMaterial.GetColor("_Color"); }
@@ -23,7 +23,7 @@ namespace KopernicusExpansion
 
                 // How bright should the emission be?
                 [ParserTarget("brightness")]
-                private NumericParser<float> PQSbrightness
+                private NumericParser<Single> PQSbrightness
                 {
                     get { return mod.EmissiveMaterial.GetFloat("_Brightness"); }
                     set { mod.EmissiveMaterial.SetFloat("_Brightness", value); }
@@ -31,7 +31,7 @@ namespace KopernicusExpansion
 
                 // How visible should the original texture be?
                 [ParserTarget("transparency")]
-                private NumericParser<float> PQStransparency
+                private NumericParser<Single> PQStransparency
                 {
                     get { return mod.EmissiveMaterial.GetFloat("_Transparency"); }
                     set { mod.EmissiveMaterial.SetFloat("_Transparency", value); }

@@ -31,6 +31,7 @@ using System;
 using System.IO;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using Object = System.Object;
 
 namespace KopernicusExpansion
 {
@@ -38,16 +39,16 @@ namespace KopernicusExpansion
     public class Logger
     {
         // Is the logger initialized?
-        private static bool isInitialized = false;
+        private static Boolean isInitialized = false;
 
         // Logger output path
-        public static string LogDirectory
+        public static String LogDirectory
         {
             get { return KSPUtil.ApplicationRootPath + "Logs/" + typeof (Logger).Assembly.GetName().Name + "/"; }
         }
 
         // ==> Implement own version
-        public static string version
+        public static String version
         {
             get { return "1.3.1-1"; }
         }
@@ -83,7 +84,7 @@ namespace KopernicusExpansion
         TextWriter loggerStream = null;
 
         // Write text to the log
-        public void Log(object o)
+        public void Log(Object o)
         {
             if (loggerStream == null)
                 return;
@@ -133,7 +134,7 @@ namespace KopernicusExpansion
         }
 
         // Create a logger
-        public Logger([Optional] string LogFileName)
+        public Logger([Optional] String LogFileName)
         {
             if (!isInitialized)
                 return;
@@ -145,15 +146,15 @@ namespace KopernicusExpansion
             {
                 // Open the log file (overwrite existing logs)
                 LogFileName = LogFileName.Replace("/", "").Replace("\\", "");
-                string LogFile = Logger.LogDirectory + LogFileName + ".log";
+                String LogFile = Logger.LogDirectory + LogFileName + ".log";
                 loggerStream = new StreamWriter(LogFile);
 
                 // Write an opening message
-                string logVersion = "//=====  " + version + "  =====//";
+                String logVersion = "//=====  " + version + "  =====//";
 
                 // Create the header this way, because I'm maybe too stupid to find the "fill" function
-                string logHeader = "";
-                for (int i = 0; i < (logVersion.Length - 4); i++)
+                String logHeader = "";
+                for (Int32 i = 0; i < (logVersion.Length - 4); i++)
                 {
                     logHeader += "=";
                 }
@@ -185,7 +186,7 @@ namespace KopernicusExpansion
                     Directory.CreateDirectory(LogDirectory);
 
                 // Clear out the old log files
-                foreach(string file in Directory.GetFiles(LogDirectory))
+                foreach(String file in Directory.GetFiles(LogDirectory))
                 {
                     File.Delete(file);
                 }

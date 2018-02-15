@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace KopernicusExpansion
 {
@@ -16,7 +17,7 @@ namespace KopernicusExpansion
                 meshToCopy.vertices.CopyTo(verts, 0);
                 mesh.vertices = verts;
 
-                int[] tris = new int[meshToCopy.triangles.Length];
+                Int32[] tris = new Int32[meshToCopy.triangles.Length];
                 meshToCopy.triangles.CopyTo(tris, 0);
                 mesh.triangles = tris;
 

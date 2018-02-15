@@ -1,5 +1,7 @@
 ﻿using LibNoise;
 using System;
+using Kopernicus.Components;
+using UnityEngine;
 
 namespace KopernicusExpansion
 {
@@ -8,15 +10,13 @@ namespace KopernicusExpansion
         /// <summary>
         /// A mod that applies a dynamic noise configuration to the terrain
         /// </summary>
-        public class PQSMod_ModularNoise : SerializedPQSMod
+        public class PQSMod_ModularNoise : SerializablePQSMod
         {
             public Double deformity;
             public Boolean normalizeHeight = true;
-            public IModule noise
-            {
-                get { return GetProperty<IModule>("noise"); }
-                set { SetProperty<IModule>("noise", value); }
-            }
+            
+            [SerializeField] 
+            public IModule noise;
 
             public override void OnVertexBuildHeight(PQS.VertexBuildData data)
             {

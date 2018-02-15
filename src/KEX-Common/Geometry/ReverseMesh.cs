@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace KopernicusExpansion
 {
@@ -14,17 +15,17 @@ namespace KopernicusExpansion
 
                 //reverse normals
                 var normals = mesh.normals;
-                for (int i = 0; i < normals.Length; i++)
+                for (Int32 i = 0; i < normals.Length; i++)
                     normals[i] = -normals[i];
                 mesh.normals = normals;
 
                 //rewind the triangles
-                for (int m = 0; m < mesh.subMeshCount; m++)
+                for (Int32 m = 0; m < mesh.subMeshCount; m++)
                 {
-                    int[] triangles = mesh.GetTriangles(m);
-                    for (int i = 0; i < triangles.Length; i += 3)
+                    Int32[] triangles = mesh.GetTriangles(m);
+                    for (Int32 i = 0; i < triangles.Length; i += 3)
                     {
-                        int temp = triangles[i + 0];
+                        Int32 temp = triangles[i + 0];
                         triangles[i + 0] = triangles[i + 1];
                         triangles[i + 1] = temp;
                     }

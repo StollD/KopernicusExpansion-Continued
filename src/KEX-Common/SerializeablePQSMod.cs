@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = System.Object;
 
 namespace KopernicusExpansion
 {
@@ -8,16 +9,16 @@ namespace KopernicusExpansion
     public class SerializedPQSMod : PQSMod
     {
         // static values
-        private static Dictionary<string, Dictionary<string, object>> _properties = new Dictionary<string, Dictionary<string, object>>();
+        private static Dictionary<String, Dictionary<String, Object>> _properties = new Dictionary<String, Dictionary<String, Object>>();
 
-        public static string NewSerializationID()
+        public static String NewSerializationID()
         {
             return Guid.NewGuid().ToString();
         }
 
         // this is because SerializationID is not public
         [SerializeField]
-        protected string SerializationID;
+        protected String SerializationID;
 
         public void InitializeSerialization()
         {
@@ -25,12 +26,12 @@ namespace KopernicusExpansion
         }
 
         //Properties
-        private Dictionary<string, object> Properties
+        private Dictionary<String, Object> Properties
         {
             get
             {
                 //return null if our ID is null
-                if (string.IsNullOrEmpty(SerializationID))
+                if (String.IsNullOrEmpty(SerializationID))
                 {
                     Debug.LogError("SerializationID is null");
                     return null;
@@ -38,19 +39,19 @@ namespace KopernicusExpansion
                 //if there is no entry, add it
                 if (!_properties.ContainsKey(this.SerializationID))
                 {
-                    _properties.Add(SerializationID, new Dictionary<string, object>());
+                    _properties.Add(SerializationID, new Dictionary<String, Object>());
                 }
                 return _properties[SerializationID];
             }
         }
-        public void SetProperty<T>(string name, T value)
+        public void SetProperty<T>(String name, T value)
         {
             if (!Properties.ContainsKey(name))
                 Properties.Add(name, value);
             else
                 Properties[name] = value;
         }
-        public T GetProperty<T>(string name)
+        public T GetProperty<T>(String name)
         {
             if (!Properties.ContainsKey(name))
                 return default(T);

@@ -1,5 +1,6 @@
 ﻿using System;
 using Kopernicus;
+using Kopernicus.UI;
 
 namespace KopernicusExpansion
 {
@@ -11,24 +12,19 @@ namespace KopernicusExpansion
             /// Loads an AeroFX from a Kopernicus Body config
             /// </summary>
             [RequireConfigType(ConfigType.Node)]
-            public class AeroFxLoader
+            public class AeroFxLoader : ITypeParser<AeroFXState>
             {
                 [RequireConfigType(ConfigType.Node)]
-                public class MinMaxFloatParser
+                public class MinMaxFloatParser : ITypeParser<MinMaxFloat>
                 {
                     // The value that is being parsed
-                    public MinMaxFloat Value;
+                    public MinMaxFloat Value { get; set; }
 
                     [ParserTarget("min")]
                     public NumericParser<Single> min
                     {
                         get { return Value.min; }
                         set { Value.min = value; }
-                    }
-
-                    public MinMaxFloatParser()
-                    {
-                        Value = new MinMaxFloat();
                     }
 
                     [ParserTarget("max")]
@@ -38,6 +34,18 @@ namespace KopernicusExpansion
                         set { Value.max = value; }
                     }
 
+                    [KittopiaConstructor(KittopiaConstructor.Parameter.Empty, purpose = KittopiaConstructor.Purpose.Create)]
+                    public MinMaxFloatParser()
+                    {
+                        Value = new MinMaxFloat();
+                    }
+
+                    [KittopiaConstructor(KittopiaConstructor.Parameter.Element, purpose = KittopiaConstructor.Purpose.Edit)]
+                    public MinMaxFloatParser(MinMaxFloat value)
+                    {
+                        Value = value;
+                    }
+
                     public static implicit operator MinMaxFloat(MinMaxFloatParser parser)
                     {
                         return parser.Value;
@@ -45,15 +53,15 @@ namespace KopernicusExpansion
 
                     public static implicit operator MinMaxFloatParser(MinMaxFloat value)
                     {
-                        return new MinMaxFloatParser {Value = value};
+                        return new MinMaxFloatParser(value);
                     }
                 }
                 
                 [RequireConfigType(ConfigType.Node)]
-                public class MinMaxColorParser
+                public class MinMaxColorParser : ITypeParser<MinMaxColor>
                 {
                     // The value that is being parsed
-                    public MinMaxColor Value;
+                    public MinMaxColor Value { get; set; }
 
                     [ParserTarget("min")]
                     public ColorParser min
@@ -69,9 +77,16 @@ namespace KopernicusExpansion
                         set { Value.max = value; }
                     }
 
+                    [KittopiaConstructor(KittopiaConstructor.Parameter.Empty, purpose = KittopiaConstructor.Purpose.Create)]
                     public MinMaxColorParser()
                     {
                         Value = new MinMaxColor();
+                    }
+
+                    [KittopiaConstructor(KittopiaConstructor.Parameter.Element, purpose = KittopiaConstructor.Purpose.Edit)]
+                    public MinMaxColorParser(MinMaxColor value)
+                    {
+                        Value = value;
                     }
 
                     public static implicit operator MinMaxColor(MinMaxColorParser parser)
@@ -81,12 +96,12 @@ namespace KopernicusExpansion
 
                     public static implicit operator MinMaxColorParser(MinMaxColor value)
                     {
-                        return new MinMaxColorParser {Value = value};
+                        return new MinMaxColorParser(value);
                     }
                 }
                 
                 // The effect that is being parsed
-                public AeroFXState Value;
+                public AeroFXState Value { get; set; }
 
                 [ParserTarget("airspeedNoisePitch")]
                 public MinMaxFloatParser airspeedNoisePitch
@@ -163,6 +178,18 @@ namespace KopernicusExpansion
                 {
                     get { return Value.color; }
                     set { Value.color = value; }
+                }
+
+                [KittopiaConstructor(KittopiaConstructor.Parameter.Empty, purpose = KittopiaConstructor.Purpose.Create)]
+                public AeroFxLoader()
+                {
+                    Value = new AeroFXState();
+                }
+
+                [KittopiaConstructor(KittopiaConstructor.Parameter.Element, purpose = KittopiaConstructor.Purpose.Edit)]
+                public AeroFxLoader(AeroFXState value)
+                {
+                    Value = value;
                 }
 
                 public static implicit operator AeroFXState(AeroFxLoader parser)

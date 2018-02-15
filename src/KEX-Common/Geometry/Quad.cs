@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace KopernicusExpansion
 {
@@ -9,7 +10,7 @@ namespace KopernicusExpansion
             private Mesh mesh;
 
             //constructor
-            public Quad(float xSize, float zSize, bool centered = false)
+            public Quad(Single xSize, Single zSize, Boolean centered = false)
             {
                 mesh = new Mesh();
 
@@ -31,7 +32,7 @@ namespace KopernicusExpansion
                     vertices[3] = new Vector3(xSize, 0f, 0f);
                 }
 
-                var triangles = new int[6];
+                var triangles = new Int32[6];
                 triangles[0] = 0;
                 triangles[1] = 1;
                 triangles[2] = 2;

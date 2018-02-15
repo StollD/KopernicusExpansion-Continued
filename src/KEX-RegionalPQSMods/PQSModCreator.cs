@@ -43,7 +43,7 @@ namespace KopernicusExpansion
             {
                 // Generate overloaded PQSMod types
                 AssemblyGen assembly = new AssemblyGen(Guid.NewGuid().ToString(),
-                    new CompilerOptions {OutputPath = Directory.GetCurrentDirectory() + "/test.dll"});
+                    new CompilerOptions {OutputPath = Path.GetTempFileName()});
                 
                 List<Type> modTypes = GetModTypes();
                 foreach (Type modType in modTypes)
@@ -100,7 +100,7 @@ namespace KopernicusExpansion
                                 onVertexBuildHeight.Assign(multiplier, onVertexBuildHeight.Local(multiplierMap.Invoke(
                                     "GetPixelColor", new TypeMapper(),
                                     data.Field("u"), data.Field("v"))));
-                                onVertexBuildHeight.If(splitChannels);
+                                onVertexBuildHeight.If(!splitChannels);
                                 {
                                     onVertexBuildHeight.Assign(multiplier.Field("a", new TypeMapper()),
                                         multiplier.Field("r", new TypeMapper()));
@@ -194,7 +194,7 @@ namespace KopernicusExpansion
                 
                 // Hacking into my own mod. Oh well.
                 modTypes.AddRange(assembly.GetAssembly().GetTypes());
-                typeof(Parser).GetField("_ModTypes", BindingFlags.NonPublic | BindingFlags.Static)
+                typeof(Parser).GetField("_modTypes", BindingFlags.NonPublic | BindingFlags.Static)
                     ?.SetValue(null, modTypes);
             }
         }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace KopernicusExpansion
@@ -7,7 +8,7 @@ namespace KopernicusExpansion
     {
         public class EVAFootprint : MonoBehaviour
         {
-            public float FadeTime = 2f;
+            public Single FadeTime = 2f;
 
             void Start()
             {
@@ -28,8 +29,8 @@ namespace KopernicusExpansion
                 }
 
                 Renderer renderer = GetComponent<Renderer>();
-                float startingOpacity = renderer.material.GetFloat("_Opacity");
-                float time = FadeTime;
+                Single startingOpacity = renderer.material.GetFloat("_Opacity");
+                Single time = FadeTime;
                 while (time > 0f)
                 {
                     time -= Time.deltaTime;
@@ -40,7 +41,7 @@ namespace KopernicusExpansion
                 Destroy(gameObject);
             }
 
-            void OnLevelWasLoaded(int level)
+            void OnLevelWasLoaded(Int32 level)
             {
                 Destroy(gameObject);
             }

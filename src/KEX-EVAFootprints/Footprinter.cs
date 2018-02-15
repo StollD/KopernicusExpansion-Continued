@@ -13,15 +13,15 @@ namespace KopernicusExpansion
             public KerbalEVA eva;
             public Part part;
 
-            private static readonly string[] WalkingStates = new string[]{
+            private static readonly String[] WalkingStates = new String[]{
                 "Walk (Arcade)",
                 "Walk (FPS)",
             };
-            private static readonly string[] RunningStates = new string[]{
+            private static readonly String[] RunningStates = new String[]{
                 "Run (Arcade)",
                 "Run (FPS)"
             };
-            private static readonly string[] BoundingStates = new string[]{
+            private static readonly String[] BoundingStates = new String[]{
                 "Low G Bound (Grounded - Arcade)",
                 "Low G Bound (Grounded - FPS)"
             };
@@ -64,7 +64,7 @@ namespace KopernicusExpansion
                 }
             }
 
-            private float leftOrRight = 1f;
+            private Single leftOrRight = 1f;
 
             private void SpawnFootprint()
             {

@@ -14,7 +14,7 @@ namespace KopernicusExpansion
                 //since we're not setting the Mu property, just calculate the magnitude table from the default value
                 SetupMagnitudeTable();
             }
-            public ExDistPerlin(double frequency, double lacunarity, double persistence, double mu, int octaves, int seed, NoiseQuality quality)
+            public ExDistPerlin(Double frequency, Double lacunarity, Double persistence, Double mu, Int32 octaves, Int32 seed, NoiseQuality quality)
             {
                 Frequency = frequency;
                 Lacunarity = lacunarity;
@@ -26,16 +26,16 @@ namespace KopernicusExpansion
             }
 
             // Constants
-            const int B = 0x100;
-            const int OctavesMaximum = 30;
-            const int GeneratorNoiseX = 1619;
-            const int GeneratorNoiseY = 31337;
-            const int GeneratorNoiseZ = 6971;
-            const int GeneratorSeed = 1013;
-            const int GeneratorShift = 8;
+            const Int32 B = 0x100;
+            const Int32 OctavesMaximum = 30;
+            const Int32 GeneratorNoiseX = 1619;
+            const Int32 GeneratorNoiseY = 31337;
+            const Int32 GeneratorNoiseZ = 6971;
+            const Int32 GeneratorSeed = 1013;
+            const Int32 GeneratorShift = 8;
 
             #region Randoms
-            static readonly double[] Randoms =
+            static readonly Double[] Randoms =
             {
             -0.763874, -0.596439, -0.246489, 0.0, 0.396055, 0.904518, -0.158073, 0.0,
             -0.499004, -0.8665, -0.0131631, 0.0, 0.468724, -0.824756, 0.316346, 0.0,
@@ -169,45 +169,45 @@ namespace KopernicusExpansion
             #endregion
 
             // Magnitudes
-            private double[] magnitudes;
+            private Double[] magnitudes;
             private void SetupMagnitudeTable()
             {
-                magnitudes = new double[B];
-                double m = 1.0;
-                for (int i = 0; i < B; i++)
+                magnitudes = new Double[B];
+                Double m = 1.0;
+                for (Int32 i = 0; i < B; i++)
                 {
                     magnitudes[i] = m;
                     m /= _mu;
                 }
             }
 
-            private double _frequency = 1.0;
-            private double _lacunarity = 2.0;
-            private double _persistence = 0.5;
-            private double _mu = 1.0146;
-            private int _octaveCount = 6;
-            private int _seed;
+            private Double _frequency = 1.0;
+            private Double _lacunarity = 2.0;
+            private Double _persistence = 0.5;
+            private Double _mu = 1.0146;
+            private Int32 _octaveCount = 6;
+            private Int32 _seed;
             private NoiseQuality _quality = NoiseQuality.Standard;
 
-            public double Frequency
+            public Double Frequency
             {
                 get { return _frequency; }
                 set { _frequency = value; }
             }
 
-            public double Lacunarity
+            public Double Lacunarity
             {
                 get { return _lacunarity; }
                 set { _lacunarity = value; }
             }
 
-            public double Persistence
+            public Double Persistence
             {
                 get { return _persistence; }
                 set { _persistence = value; }
             }
 
-            public double Mu
+            public Double Mu
             {
                 get { return _mu; }
                 set
@@ -218,13 +218,13 @@ namespace KopernicusExpansion
                 }
             }
 
-            public int OctaveCount
+            public Int32 OctaveCount
             {
                 get { return _octaveCount; }
                 set { _octaveCount = Mathf.Clamp(value, 1, OctavesMaximum); }
             }
 
-            public int Seed
+            public Int32 Seed
             {
                 get { return _seed; }
                 set { _seed = value; }
@@ -236,7 +236,7 @@ namespace KopernicusExpansion
                 set { _quality = value; }
             }
 
-            public double GetValue(double x, double y, double z)
+            public Double GetValue(Double x, Double y, Double z)
             {
                 var value = 0.0;
                 var cp = 1.0;
@@ -260,15 +260,15 @@ namespace KopernicusExpansion
             }
 
             // noise
-            private double GradientCoherentDistributedNoise3D(double x, double y, double z, long seed, NoiseQuality quality)
+            private Double GradientCoherentDistributedNoise3D(Double x, Double y, Double z, Int64 seed, NoiseQuality quality)
             {
-                var x0 = x > 0.0 ? (int)x : (int)x - 1;
+                var x0 = x > 0.0 ? (Int32)x : (Int32)x - 1;
                 var x1 = x0 + 1;
-                var y0 = y > 0.0 ? (int)y : (int)y - 1;
+                var y0 = y > 0.0 ? (Int32)y : (Int32)y - 1;
                 var y1 = y0 + 1;
-                var z0 = z > 0.0 ? (int)z : (int)z - 1;
+                var z0 = z > 0.0 ? (Int32)z : (Int32)z - 1;
                 var z1 = z0 + 1;
-                double xs = 0, ys = 0, zs = 0;
+                Double xs = 0, ys = 0, zs = 0;
                 switch (quality)
                 {
                     case NoiseQuality.Low:
@@ -293,7 +293,7 @@ namespace KopernicusExpansion
                             break;
                         }
                 }
-                long i = 255;
+                Int64 i = 255;
                 var j0 = GradientDistributedNoise3D(x, y, z, x0, y0, z0, seed, ref i);
                 var n0 = j0 * magnitudes[Math.Abs(i) % B];
                 var j1 = GradientDistributedNoise3D(x, y, z, x1, y0, z0, seed, ref i);
@@ -319,7 +319,7 @@ namespace KopernicusExpansion
                 return Utils.LerpD(iy0, iy1, zs);
             }
 
-            private double GradientDistributedNoise3D(double fx, double fy, double fz, int ix, int iy, int iz, long seed, ref long i)
+            private Double GradientDistributedNoise3D(Double fx, Double fy, Double fz, Int32 ix, Int32 iy, Int32 iz, Int64 seed, ref Int64 i)
             {
                 i = (GeneratorNoiseX * ix + GeneratorNoiseY * iy + GeneratorNoiseZ * iz + GeneratorSeed * seed) & 0xffffffff;
                 i ^= (i >> GeneratorShift);

@@ -1,4 +1,5 @@
-﻿using Kopernicus.Components;
+﻿using System;
+using Kopernicus.Components;
 using KopernicusExpansion.Noise;
 using UnityEngine;
 
@@ -11,11 +12,11 @@ namespace KopernicusExpansion
         /// </summary>
         public class CometTailController : MonoBehaviour
         {
-            private const float MaxTime = 10000;
+            private const Single MaxTime = 10000;
 
             public CometTailType type;
             public Orbit orbit;
-            public string targetBodyName;
+            public String targetBodyName;
             public Color color;
 
             public FloatCurve opacityCurve;
@@ -23,10 +24,10 @@ namespace KopernicusExpansion
 
             private Transform target;
 
-            private float currentTime = 0f;
-            public int seed = 0;
-            public float speed = 0.05f;
-            public bool doAnimate = true;
+            private Single currentTime = 0f;
+            public Int32 seed = 0;
+            public Single speed = 0.05f;
+            public Boolean doAnimate = true;
 
             private ImprovedPerlinNoise noise;
 
@@ -75,9 +76,9 @@ namespace KopernicusExpansion
                 if (target != null)
                 {
                     // getting data
-                    float distance = Vector3.Distance(target.position, transform.position);
-                    float opacity = opacityCurve.Evaluate(distance * ScaledSpace.ScaleFactor);
-                    float brightness = brightnessCurve.Evaluate(distance * ScaledSpace.ScaleFactor);
+                    Single distance = Vector3.Distance(target.position, transform.position);
+                    Single opacity = opacityCurve.Evaluate(distance * ScaledSpace.ScaleFactor);
+                    Single brightness = brightnessCurve.Evaluate(distance * ScaledSpace.ScaleFactor);
 
                     // clamping
                     if (opacity < 0.0075f)

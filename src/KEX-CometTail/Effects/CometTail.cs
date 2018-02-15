@@ -1,4 +1,5 @@
-﻿using Kopernicus.Components;
+﻿using System;
+using Kopernicus.Components;
 using Kopernicus.Constants;
 using KopernicusExpansion.Geometry;
 using UnityEngine;
@@ -18,20 +19,20 @@ namespace KopernicusExpansion
                 public CometTailType type;
 
                 public Color color = Color.white;
-                public float rimPower = 1.41f;
-                public float distortion = 0.143f;
-                public float alphaDistortion = 0.262f;
-                public float zDistortion = 0.12f;
-                public float frequency = 1.547f;
-                public float lacunarity = 1.518f;
-                public float gain = 0.734f;
+                public Single rimPower = 1.41f;
+                public Single distortion = 0.143f;
+                public Single alphaDistortion = 0.262f;
+                public Single zDistortion = 0.12f;
+                public Single frequency = 1.547f;
+                public Single lacunarity = 1.518f;
+                public Single gain = 0.734f;
 
-                public float radius = 2000f;
-                public float length = 16000f;
+                public Single radius = 2000f;
+                public Single length = 16000f;
                 public FloatCurve opacityCurve;
                 public FloatCurve brightnessCurve;
 
-                private const string FallbackShader = "Particles/Alpha Blended";
+                private const String FallbackShader = "Particles/Alpha Blended";
 
                 public static void AddCometTail(PSystemBody body, Tail tail)
                 {

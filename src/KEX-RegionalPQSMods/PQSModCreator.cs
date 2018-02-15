@@ -153,22 +153,8 @@ namespace KopernicusExpansion
                             }
                             
                             FieldGen loader = loaderGen.Public.Field(loaderType, "loader")
-                                .BeginAttribute(typeof(ParserTarget), "Mod").SetField("allowMerge", true).End();
+                                .BeginAttribute(typeof(ParserTarget), "Mod").SetField("AllowMerge", true).End();
 
-                            CodeGen create = loaderGen.Public.Override.Method(typeof(void), "Create");
-                            {
-                                create.Invoke(create.Base(), "Create");
-                                create.Assign(loader, assembly.ExpressionFactory.New(loaderType));
-                                create.Invoke(loader, "Create", create.Base().Property("mod"));
-                            }
-                            CodeGen create_Mod = loaderGen.Public.Override.Method(typeof(void), "Create")
-                                .Parameter(modGen, "_mod");
-                            {
-                                ContextualOperand _mod = create_Mod.Arg("_mod");
-                                create_Mod.Invoke(create_Mod.Base(), "Create", _mod);
-                                create_Mod.Assign(loader, assembly.ExpressionFactory.New(loaderType));
-                                create_Mod.Invoke(loader, "Create", create_Mod.Base().Property("mod"));
-                            }
                             CodeGen create_PQS = loaderGen.Public.Override.Method(typeof(void), "Create")
                                 .Parameter(typeof(PQS), "pqsVersion");
                             {

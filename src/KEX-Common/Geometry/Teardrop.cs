@@ -29,7 +29,6 @@ namespace KopernicusExpansion
                 mesh.vertices = verts;
                 mesh.RecalculateBounds();
                 mesh.RecalculateNormals();
-                mesh.Optimize();
             }
 
             public static implicit operator Mesh(Teardrop teardrop)

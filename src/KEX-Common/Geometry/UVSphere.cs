@@ -110,7 +110,6 @@ namespace KopernicusExpansion
                 mesh.triangles = triangles;
 
                 mesh.RecalculateBounds();
-                mesh.Optimize();
             }
 
             public static implicit operator Mesh(UVSphere sphere)

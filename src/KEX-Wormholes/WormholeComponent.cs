@@ -36,6 +36,16 @@ namespace KopernicusExpansion
             public String partnerBody;
 
             /// <summary>
+            /// A message that is displayed when getting below the influence altitude
+            /// </summary>
+            public String entryMessage;
+
+            /// <summary>
+            /// A message that is displayed when getting over the influence altitude
+            /// </summary>
+            public String exitMessage;
+
+            /// <summary>
             /// The body we are attached to
             /// </summary>
             private CelestialBody _body;
@@ -53,7 +63,7 @@ namespace KopernicusExpansion
             /// <summary>
             /// The time it took for the vessel to arrive at the periapsis from the last frame
             /// </summary>
-            private Double _lastTimeToPe;
+            private Double _lastAlt;
             
             void Start()
             {
@@ -84,9 +94,10 @@ namespace KopernicusExpansion
                     if (FlightGlobals.ActiveVessel.GetComponent<CameraShake>() == null)
                     {
                         FlightGlobals.ActiveVessel.gameObject.AddComponent<CameraShake>().ShakeAmount = 2;
-
-                        // Lock the controls
-                        InputLockManager.SetControlLock("KEX::Wormhole::Travel");
+                        if (!String.IsNullOrEmpty(entryMessage))
+                        {
+                            ScreenMessages.PostScreenMessage(entryMessage, 2f);
+                        }
                     }
                 }
                 else
@@ -95,9 +106,10 @@ namespace KopernicusExpansion
                     if (shake != null)
                     {
                         Destroy(shake);
-                        
-                        // Unlock the controls
-                        InputLockManager.RemoveControlLock("KEX::Wormhole::Travel");
+                        if (!String.IsNullOrEmpty(exitMessage))
+                        {
+                            ScreenMessages.PostScreenMessage(exitMessage, 2f);
+                        }
                     }
 
                     return;
@@ -129,7 +141,7 @@ namespace KopernicusExpansion
                     PDebug.debugLevel = l;
 
                     // If the Pe is within the jump range, jump
-                    if (FlightGlobals.ship_orbit.timeToPe - _lastTimeToPe > 0)
+                    if (FlightGlobals.ship_altitude - _lastAlt > 0)
                     {
                         // Move the vessel to the new orbit
                         if (FlightGlobals.ActiveVessel.GetComponent<JumpMarker>() == null)
@@ -155,7 +167,7 @@ namespace KopernicusExpansion
                     }
                 }
 
-                _lastTimeToPe = FlightGlobals.ship_orbit.timeToPe;
+                _lastAlt = FlightGlobals.ship_altitude;
             }
 
             private void MakeOrbit(OrbitDriver driver, CelestialBody reference)

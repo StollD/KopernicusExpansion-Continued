@@ -47,6 +47,20 @@ namespace KopernicusExpansion
                 set { Value.heatRate = value; }
             }
 
+            [ParserTarget("entryMessage")]
+            public String entryMessage
+            {
+                get { return Value.entryMessage; }
+                set { Value.entryMessage = value; }
+            }
+
+            [ParserTarget("exitMessage")]
+            public String exitMessage
+            {
+                get { return Value.exitMessage; }
+                set { Value.exitMessage = value; }
+            }
+
             /// <summary>
             /// Creates a new Wormhole Loader from the Injector context.
             /// </summary>

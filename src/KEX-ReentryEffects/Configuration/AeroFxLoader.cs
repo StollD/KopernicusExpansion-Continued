@@ -34,13 +34,12 @@ namespace KopernicusExpansion
                         set { Value.max = value; }
                     }
 
-                    [KittopiaConstructor(KittopiaConstructor.Parameter.Empty, purpose = KittopiaConstructor.Purpose.Create)]
+                    [KittopiaConstructor(KittopiaConstructor.Parameter.Empty)]
                     public MinMaxFloatParser()
                     {
                         Value = new MinMaxFloat();
                     }
 
-                    [KittopiaConstructor(KittopiaConstructor.Parameter.Element, purpose = KittopiaConstructor.Purpose.Edit)]
                     public MinMaxFloatParser(MinMaxFloat value)
                     {
                         Value = value;
@@ -77,13 +76,12 @@ namespace KopernicusExpansion
                         set { Value.max = value; }
                     }
 
-                    [KittopiaConstructor(KittopiaConstructor.Parameter.Empty, purpose = KittopiaConstructor.Purpose.Create)]
+                    [KittopiaConstructor(KittopiaConstructor.Parameter.Empty)]
                     public MinMaxColorParser()
                     {
                         Value = new MinMaxColor();
                     }
 
-                    [KittopiaConstructor(KittopiaConstructor.Parameter.Element, purpose = KittopiaConstructor.Purpose.Edit)]
                     public MinMaxColorParser(MinMaxColor value)
                     {
                         Value = value;
@@ -180,13 +178,12 @@ namespace KopernicusExpansion
                     set { Value.color = value; }
                 }
 
-                [KittopiaConstructor(KittopiaConstructor.Parameter.Empty, purpose = KittopiaConstructor.Purpose.Create)]
+                [KittopiaConstructor(KittopiaConstructor.Parameter.Empty)]
                 public AeroFxLoader()
                 {
                     Value = new AeroFXState();
                 }
 
-                [KittopiaConstructor(KittopiaConstructor.Parameter.Element, purpose = KittopiaConstructor.Purpose.Edit)]
                 public AeroFxLoader(AeroFXState value)
                 {
                     Value = value;

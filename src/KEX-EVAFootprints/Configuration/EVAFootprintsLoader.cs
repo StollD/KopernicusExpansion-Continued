@@ -25,12 +25,15 @@ namespace KopernicusExpansion
                 // Post apply event
                 void IParserEventSubscriber.PostApply(ConfigNode node)
                 {
-                    ModLoader<PQSMod_FootprintRemover> mod = new ModLoader<PQSMod_FootprintRemover>();
+                    FootprintRemover mod = new FootprintRemover();
                     mod.Create(generatedBody.pqsVersion);
                     mod.order = 0;
                     mod.enabled = true;
                 }
             }
+            
+            [RequireConfigType(ConfigType.Node)]
+            public class FootprintRemover : ModLoader<PQSMod_FootprintRemover> {}
         }
     }
 }

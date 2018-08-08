@@ -52,20 +52,20 @@ namespace KopernicusExpansion
                 if (target != null)
                 {
                     // look at target
-                    if (type == CometTailType.Ion)
-                    {
+                    // if (type == CometTailType.Ion)
+                    // {
                         Quaternion rot = Quaternion.LookRotation((target.position - transform.position).normalized);
                         transform.localRotation = rot;
-                    }
-                    else
-                    {
-                        Vector3 orbitVector = (body.getPositionAtUT(Planetarium.GetUniversalTime() + 1) -
-                                               body.getPositionAtUT(Planetarium.GetUniversalTime())) * 0.00001f;
-                        Vector3 lookVector =
-                            Vector3.Normalize(
-                                orbitVector - (Vector3.Normalize(transform.position - target.position) * 0.5f));
-                        transform.LookAt(transform.position + lookVector * 100);
-                    }
+                    // }
+                    // else
+                    // {
+                    //     Vector3 orbitVector = (body.getPositionAtUT(Planetarium.GetUniversalTime() + 1) -
+                    //                            body.getPositionAtUT(Planetarium.GetUniversalTime())) * 0.00001f;
+                    //     Vector3 lookVector =
+                    //         Vector3.Normalize(
+                    //             orbitVector - (Vector3.Normalize(transform.position - target.position) * 0.5f));
+                    //     transform.LookAt(transform.position + lookVector * 100);
+                    // }
                 }
                 else
                 {

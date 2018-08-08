@@ -15,7 +15,7 @@ namespace KopernicusExpansion
             private const Single MaxTime = 10000;
 
             public CometTailType type;
-            public Orbit orbit;
+            public CelestialBody body;
             public String targetBodyName;
             public Color color;
 
@@ -45,7 +45,8 @@ namespace KopernicusExpansion
 
             void Update()
             {
-                if (HighLogic.LoadedScene != GameScenes.FLIGHT && HighLogic.LoadedScene != GameScenes.SPACECENTER && HighLogic.LoadedScene != GameScenes.TRACKSTATION)
+                if (HighLogic.LoadedScene != GameScenes.FLIGHT && HighLogic.LoadedScene != GameScenes.SPACECENTER &&
+                    HighLogic.LoadedScene != GameScenes.TRACKSTATION)
                     return;
 
                 if (target != null)
@@ -54,23 +55,28 @@ namespace KopernicusExpansion
                     if (type == CometTailType.Ion)
                     {
                         Quaternion rot = Quaternion.LookRotation((target.position - transform.position).normalized);
-                        transform.rotation = rot;
+                        transform.localRotation = rot;
                     }
                     else
                     {
-                        Vector3 orbitVector = (orbit.getPositionAtUT(Planetarium.GetUniversalTime() + 1) - orbit.getPositionAtUT(Planetarium.GetUniversalTime())) * 0.00001f;
-                        Vector3 lookVector = Vector3.Normalize(orbitVector - (Vector3.Normalize(transform.position - target.position) * 0.5f));
+                        Vector3 orbitVector = (body.getPositionAtUT(Planetarium.GetUniversalTime() + 1) -
+                                               body.getPositionAtUT(Planetarium.GetUniversalTime())) * 0.00001f;
+                        Vector3 lookVector =
+                            Vector3.Normalize(
+                                orbitVector - (Vector3.Normalize(transform.position - target.position) * 0.5f));
                         transform.LookAt(transform.position + lookVector * 100);
                     }
-                    // TODO: make dust trails deflect from solar wind
                 }
                 else
+                {
                     GetTarget();
+                }
             }
 
             void LateUpdate()
             {
-                if (HighLogic.LoadedScene != GameScenes.FLIGHT && HighLogic.LoadedScene != GameScenes.SPACECENTER && HighLogic.LoadedScene != GameScenes.TRACKSTATION)
+                if (HighLogic.LoadedScene != GameScenes.FLIGHT && HighLogic.LoadedScene != GameScenes.SPACECENTER &&
+                    HighLogic.LoadedScene != GameScenes.TRACKSTATION)
                     return;
 
                 if (target != null)
@@ -103,17 +109,14 @@ namespace KopernicusExpansion
                     }
                 }
                 else
+                {
                     GetTarget();
+                }
             }
 
-            /// <summary>
-            /// Get the nearest star
-            /// </summary>
             void GetTarget()
             {
-                if (HighLogic.LoadedScene == GameScenes.PSYSTEM)
-                    return;
-                CelestialBody body = PSystemManager.Instance.localBodies.Find(b => b.transform.name == transform.name);
+                body = PSystemManager.Instance.localBodies.Find(b => b.scaledBody.name == transform.parent.name);
                 target = KopernicusStar.GetNearest(body).sun.scaledBody.transform;
             }
         }

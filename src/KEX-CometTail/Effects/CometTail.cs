@@ -68,7 +68,6 @@ namespace KopernicusExpansion
                     CometTailController cometController = obj.AddComponent<CometTailController>();
                     cometController.type = tail.type;
                     cometController.color = tail.color;
-                    cometController.orbit = body.celestialBody.orbit;
                     cometController.opacityCurve = tail.opacityCurve;
                     cometController.brightnessCurve = tail.brightnessCurve;
 

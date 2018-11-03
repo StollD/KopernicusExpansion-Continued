@@ -7,7 +7,7 @@ namespace KopernicusExpansion
 {
     namespace VertexHeightMap32
     {
-        public class VertexHeightMap32 : ModLoader<PQSMod_VertexHeightMap32>
+        public class VertexHeightMap16 : ModLoader<PQSMod_VertexHeightMap16>
         {    
             // The map texture for the planet
             [ParserTarget("map")]
@@ -39,22 +39,6 @@ namespace KopernicusExpansion
             {
                 get { return mod.scaleDeformityByRadius; }
                 set { mod.scaleDeformityByRadius = value; }
-            }
-            
-            // Which channels of the map should be used?
-            [ParserTarget("depth")]
-            public EnumParser<MapSO.MapDepth> depth
-            {
-                get { return mod.depth; }
-                set { mod.depth = value; }
-            }
-            
-            // How large should the difference between the single levels of detail be
-            [ParserTarget("level")]
-            public NumericParser<Double> exponent
-            {
-                get { return mod.level; }
-                set { mod.level = value; }
             }
         }
     }

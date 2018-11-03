@@ -129,6 +129,7 @@ namespace KopernicusExpansion
                             {
                                 CodeGen getter = multiplierMap.Getter();
                                 {
+                                    Debug.Log(getter.Base());
                                     getter.Return(getter.Base().Property("mod").Field("multiplierMap"));
                                 }
                                 CodeGen setter = multiplierMap.Setter();

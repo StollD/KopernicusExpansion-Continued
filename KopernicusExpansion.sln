@@ -17,13 +17,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-ProceduralGasGiants", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-RegionalPQSMods", "src\KEX-RegionalPQSMods\KEX-RegionalPQSMods.csproj", "{BB279332-FCFA-450D-9BFB-5D65EB7A246A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-VertexHeightMap32", "src\KEX-VertexHeightMap32\KEX-VertexHeightMap32.csproj", "{8CDE04F9-63DE-4805-9776-635906680E5A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-VertexHeightMap16", "src\KEX-VertexHeightMap16\plugin\KEX-VertexHeightMap16.csproj", "{8CDE04F9-63DE-4805-9776-635906680E5A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-VertexHeightDeformity", "src\KEX-VertexHeightDeformity\KEX-VertexHeightDeformity.csproj", "{DE9E1437-4BDC-40A0-8E88-B230BCDCD74D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-ReentryEffects", "src\KEX-ReentryEffects\KEX-ReentryEffects.csproj", "{0BB03AC6-6CB6-4171-9FCE-E557CF23B21D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-Wormholes", "src\KEX-Wormholes\KEX-Wormholes.csproj", "{B82FCEE2-2771-4956-8694-D711019A3D2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-HeightmapConverter", "src\KEX-VertexHeightMap16\converter\KEX-HeightmapConverter.csproj", "{9696C1F4-EF92-4F8D-A22F-01C375C2D2E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{B82FCEE2-2771-4956-8694-D711019A3D2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B82FCEE2-2771-4956-8694-D711019A3D2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B82FCEE2-2771-4956-8694-D711019A3D2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9696C1F4-EF92-4F8D-A22F-01C375C2D2E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9696C1F4-EF92-4F8D-A22F-01C375C2D2E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9696C1F4-EF92-4F8D-A22F-01C375C2D2E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9696C1F4-EF92-4F8D-A22F-01C375C2D2E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -62,14 +62,14 @@ namespace KopernicusExpansion
             }
             
             [ParserTarget("entryMsgDuration")]
-            public NumericParser<UInt32> entryMsgDuration
+            public NumericParser<Single> entryMsgDuration
             {
                 get { return Value.entryMsgDuration; }
                 set { Value.entryMsgDuration = value; }
             }
             
             [ParserTarget("exitMsgDuration")]
-            public NumericParser<UInt32> exitMsgDuration
+            public NumericParser<Single> exitMsgDuration
             {
                 get { return Value.exitMsgDuration; }
                 set { Value.exitMsgDuration = value; }

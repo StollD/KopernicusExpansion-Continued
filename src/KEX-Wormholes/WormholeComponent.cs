@@ -48,12 +48,12 @@ namespace KopernicusExpansion
             /// <summary>
             /// The amount of time in seconds that the entry message is displayed
             /// </summary>
-            public float entryMsgDuration;
+            public float entryMsgDuration = 2f;
 
             /// <summary>
             /// The amount of time in seconds that the exit message is displayed
             /// </summary>
-            public float exitMsgDuration;
+            public float exitMsgDuration = 2f;
             
             /// <summary>
             /// The body we are attached to

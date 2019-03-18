@@ -44,7 +44,17 @@ namespace KopernicusExpansion
             /// A message that is displayed when getting over the influence altitude
             /// </summary>
             public String exitMessage;
+            
+            /// <summary>
+            /// The amount of time in seconds that the entry message is displayed
+            /// </summary>
+            public float entryMsgDuration;
 
+            /// <summary>
+            /// The amount of time in seconds that the exit message is displayed
+            /// </summary>
+            public float exitMsgDuration;
+            
             /// <summary>
             /// The body we are attached to
             /// </summary>
@@ -96,7 +106,7 @@ namespace KopernicusExpansion
                         FlightGlobals.ActiveVessel.gameObject.AddComponent<CameraShake>().ShakeAmount = 2;
                         if (!String.IsNullOrEmpty(entryMessage))
                         {
-                            ScreenMessages.PostScreenMessage(entryMessage, 2f);
+                            ScreenMessages.PostScreenMessage(entryMessage, entryMsgDuration);
                         }
                     }
                 }
@@ -108,7 +118,7 @@ namespace KopernicusExpansion
                         Destroy(shake);
                         if (!String.IsNullOrEmpty(exitMessage))
                         {
-                            ScreenMessages.PostScreenMessage(exitMessage, 2f);
+                            ScreenMessages.PostScreenMessage(exitMessage, exitMsgDuration);
                         }
                     }
 

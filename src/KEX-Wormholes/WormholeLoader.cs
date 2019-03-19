@@ -60,7 +60,22 @@ namespace KopernicusExpansion
                 get { return Value.exitMessage; }
                 set { Value.exitMessage = value; }
             }
-
+            
+            [ParserTarget("entryMsgDuration")]
+            public NumericParser<Single> entryMsgDuration
+            {
+                get { return Value.entryMsgDuration; }
+                set { Value.entryMsgDuration = value; }
+            }
+            
+            [ParserTarget("exitMsgDuration")]
+            public NumericParser<Single> exitMsgDuration
+            {
+                get { return Value.exitMsgDuration; }
+                set { Value.exitMsgDuration = value; }
+            }
+            
+            
             /// <summary>
             /// Creates a new Wormhole Loader from the Injector context.
             /// </summary>

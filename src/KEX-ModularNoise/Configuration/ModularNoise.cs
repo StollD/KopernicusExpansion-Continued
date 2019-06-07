@@ -1,6 +1,10 @@
 ﻿using Kopernicus;
 using Kopernicus.Configuration.ModLoader;
 using System;
+using Kopernicus.ConfigParser;
+using Kopernicus.ConfigParser.Attributes;
+using Kopernicus.ConfigParser.BuiltinTypeParsers;
+using Kopernicus.ConfigParser.Enumerations;
 using Kopernicus.Configuration.NoiseLoader;
 
 namespace KopernicusExpansion
@@ -15,15 +19,15 @@ namespace KopernicusExpansion
                 [ParserTarget("deformity")]
                 public NumericParser<Double> deformity
                 {
-                    get { return mod.deformity; }
-                    set { mod.deformity = value; }
+                    get { return Mod.deformity; }
+                    set { Mod.deformity = value; }
                 }
 
                 [ParserTarget("normalizeHeight")]
                 public NumericParser<Boolean> normalizeHeight
                 {
-                    get { return mod.normalizeHeight; }
-                    set { mod.normalizeHeight = value; }
+                    get { return Mod.normalizeHeight; }
+                    set { Mod.normalizeHeight = value; }
                 }
 
                 [ParserTarget("Noise", NameSignificance = NameSignificance.Type, Optional = false)]
@@ -31,9 +35,9 @@ namespace KopernicusExpansion
                 {
                     get
                     {
-                        if (mod.noise != null)
+                        if (Mod.noise != null)
                         {
-                            Type noiseType = mod.noise.GetType();
+                            Type noiseType = Mod.noise.GetType();
                             foreach (Type loaderType in Parser.ModTypes)
                             {
                                 if (loaderType.BaseType == null)
@@ -47,13 +51,13 @@ namespace KopernicusExpansion
                         
                                 // We found our loader type
                                 INoiseLoader loader = (INoiseLoader) Activator.CreateInstance(loaderType);
-                                loader.Create(mod.noise);
+                                loader.Create(Mod.noise);
                                 return loader;
                             }
                         }
                         return null;
                     }
-                    set { mod.noise = value.Noise; }
+                    set { Mod.noise = value.Noise; }
                 }
             }
         }

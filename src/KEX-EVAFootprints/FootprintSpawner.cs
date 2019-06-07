@@ -4,6 +4,7 @@ using Kopernicus.Constants;
 using KopernicusExpansion.Geometry;
 using System;
 using System.Collections.Generic;
+using Kopernicus.Configuration.Parsing;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -21,7 +22,7 @@ namespace KopernicusExpansion
             private static void SetupFootprintPrefab()
             {
                 footprintPrefab = new GameObject("KerbalEVAFootprint");
-                footprintPrefab.layer = GameLayers.LocalSpace;
+                footprintPrefab.layer = GameLayers.LOCAL_SPACE;
                 footprintPrefab.SetActive(false);
 
                 MeshFilter mf = footprintPrefab.AddComponent<MeshFilter>();

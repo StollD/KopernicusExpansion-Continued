@@ -4,8 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Kopernicus;
+using Kopernicus.ConfigParser;
+using Kopernicus.ConfigParser.Attributes;
+using Kopernicus.ConfigParser.BuiltinTypeParsers;
 using Kopernicus.Configuration;
 using Kopernicus.Configuration.ModLoader;
+using Kopernicus.Configuration.Parsing;
 using TriAxis.RunSharp;
 using UnityEngine;
 
@@ -124,7 +128,7 @@ namespace KopernicusExpansion
                             assembly.Public.Class($"{modType.Name.Replace("PQSMod_", "").Replace("PQS", "")}Regional",
                                 modLoader);
                         {
-                            PropertyGen multiplierMap = loaderGen.Public.Property(typeof(MapSOParser_RGB<MapSO>), "multiplierMap")
+                            PropertyGen multiplierMap = loaderGen.Public.Property(typeof(MapSOParserRGB<MapSO>), "multiplierMap")
                                 .Attribute(typeof(ParserTarget), "multiplierMap");
                             {
                                 CodeGen getter = multiplierMap.Getter();

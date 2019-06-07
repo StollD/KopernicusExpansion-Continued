@@ -2,6 +2,10 @@
 using Kopernicus.Configuration;
 using KopernicusExpansion.CometTail.Effects;
 using System.Collections.Generic;
+using Kopernicus.ConfigParser.Attributes;
+using Kopernicus.ConfigParser.Enumerations;
+using Kopernicus.ConfigParser.Interfaces;
+using Kopernicus.Configuration.Parsing;
 
 namespace KopernicusExpansion
 {

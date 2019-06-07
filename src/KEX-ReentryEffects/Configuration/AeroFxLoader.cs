@@ -1,5 +1,9 @@
 ﻿using System;
 using Kopernicus;
+using Kopernicus.ConfigParser.Attributes;
+using Kopernicus.ConfigParser.BuiltinTypeParsers;
+using Kopernicus.ConfigParser.Enumerations;
+using Kopernicus.ConfigParser.Interfaces;
 using Kopernicus.UI;
 
 namespace KopernicusExpansion
@@ -34,7 +38,7 @@ namespace KopernicusExpansion
                         set { Value.max = value; }
                     }
 
-                    [KittopiaConstructor(KittopiaConstructor.Parameter.Empty)]
+                    [KittopiaConstructor(KittopiaConstructor.ParameterType.Empty)]
                     public MinMaxFloatParser()
                     {
                         Value = new MinMaxFloat();
@@ -76,7 +80,7 @@ namespace KopernicusExpansion
                         set { Value.max = value; }
                     }
 
-                    [KittopiaConstructor(KittopiaConstructor.Parameter.Empty)]
+                    [KittopiaConstructor(KittopiaConstructor.ParameterType.Empty)]
                     public MinMaxColorParser()
                     {
                         Value = new MinMaxColor();
@@ -178,7 +182,7 @@ namespace KopernicusExpansion
                     set { Value.color = value; }
                 }
 
-                [KittopiaConstructor(KittopiaConstructor.Parameter.Empty)]
+                [KittopiaConstructor(KittopiaConstructor.ParameterType.Empty)]
                 public AeroFxLoader()
                 {
                     Value = new AeroFXState();

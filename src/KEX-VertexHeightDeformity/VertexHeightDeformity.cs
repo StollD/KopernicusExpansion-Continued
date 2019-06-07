@@ -1,5 +1,7 @@
 ﻿using System;
 using Kopernicus;
+using Kopernicus.ConfigParser.Attributes;
+using Kopernicus.ConfigParser.BuiltinTypeParsers;
 using Kopernicus.Configuration.ModLoader;
 
 namespace KopernicusExpansion
@@ -12,16 +14,16 @@ namespace KopernicusExpansion
             [ParserTarget("deformity")]
             public NumericParser<Double> heightMapDeformity
             {
-                get { return mod.deformity; }
-                set { mod.deformity = value; }
+                get { return Mod.deformity; }
+                set { Mod.deformity = value; }
             }
 
             // Whether the deformity should get multiplied by the sphere radius
             [ParserTarget("scaleDeformityByRadius")]
             public NumericParser<Boolean> scaleDeformityByRadius
             {
-                get { return mod.scaleDeformityByRadius; }
-                set { mod.scaleDeformityByRadius = value; }
+                get { return Mod.scaleDeformityByRadius; }
+                set { Mod.scaleDeformityByRadius = value; }
             }
         }
     }

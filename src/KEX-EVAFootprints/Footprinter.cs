@@ -70,7 +70,7 @@ namespace KopernicusExpansion
             {
                 RaycastHit hit;
                 Ray ray = new Ray(transform.position, FlightGlobals.getGeeForceAtPosition(part.vessel.GetWorldPos3D()).normalized);
-                if (Physics.Raycast(ray, out hit, 2f, (1 << GameLayers.LocalSpace)))
+                if (Physics.Raycast(ray, out hit, 2f, (1 << GameLayers.LOCAL_SPACE)))
                 {
                     // don't add footprints to non-terrain features
                     if (hit.transform.GetComponent<PQ>() == null)

@@ -1,6 +1,7 @@
 ﻿using LibNoise;
 using System;
 using Kopernicus.Components;
+using Kopernicus.Components.Serialization;
 using UnityEngine;
 
 namespace KopernicusExpansion

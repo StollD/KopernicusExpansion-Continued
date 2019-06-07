@@ -1,5 +1,9 @@
 ﻿using System;
 using Kopernicus;
+using Kopernicus.ConfigParser.Attributes;
+using Kopernicus.ConfigParser.BuiltinTypeParsers;
+using Kopernicus.ConfigParser.Enumerations;
+using Kopernicus.ConfigParser.Interfaces;
 using KopernicusExpansion.CometTail.Effects;
 
 namespace KopernicusExpansion

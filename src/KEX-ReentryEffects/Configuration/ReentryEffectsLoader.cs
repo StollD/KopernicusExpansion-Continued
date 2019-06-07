@@ -1,5 +1,8 @@
 ﻿using Kopernicus;
+using Kopernicus.ConfigParser.Attributes;
+using Kopernicus.ConfigParser.Enumerations;
 using Kopernicus.Configuration;
+using Kopernicus.Configuration.Parsing;
 using UnityEngine;
 
 namespace KopernicusExpansion

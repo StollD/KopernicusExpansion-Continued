@@ -3,7 +3,12 @@ using Kopernicus.Components;
 using Kopernicus.Configuration;
 using KopernicusExpansion.ProceduralGasGiants.Effects;
 using System;
+using Kopernicus.ConfigParser.Attributes;
+using Kopernicus.ConfigParser.BuiltinTypeParsers;
+using Kopernicus.ConfigParser.Interfaces;
+using Kopernicus.Configuration.Parsing;
 using UnityEngine;
+using Gradient = Kopernicus.Configuration.Parsing.Gradient;
 
 namespace KopernicusExpansion
 {
@@ -38,7 +43,7 @@ namespace KopernicusExpansion
                 }
 
                 [ParserTarget("rampTextureGradient", AllowMerge = false)]
-                public Kopernicus.Configuration.Gradient rampTexGradient
+                public Gradient rampTexGradient
                 {
                     set
                     {

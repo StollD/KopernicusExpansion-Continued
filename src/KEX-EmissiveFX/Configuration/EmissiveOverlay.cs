@@ -1,7 +1,11 @@
 ﻿using System;
 using Kopernicus;
 using Kopernicus.Components;
+using Kopernicus.ConfigParser.Attributes;
+using Kopernicus.ConfigParser.BuiltinTypeParsers;
+using Kopernicus.ConfigParser.Interfaces;
 using Kopernicus.Configuration;
+using Kopernicus.Configuration.Parsing;
 using UnityEngine;
 
 namespace KopernicusExpansion

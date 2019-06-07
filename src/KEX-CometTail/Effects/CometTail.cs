@@ -39,7 +39,7 @@ namespace KopernicusExpansion
                     Transform scaledVersion = body.scaledVersion.transform;
 
                     GameObject obj = new GameObject("CometTail");
-                    obj.layer = GameLayers.ScaledSpace;
+                    obj.layer = GameLayers.SCALED_SPACE;
                     obj.transform.parent = Kopernicus.Utility.Deactivator;
 
                     MeshRenderer mr = obj.AddComponent<MeshRenderer>();
@@ -75,7 +75,7 @@ namespace KopernicusExpansion
                     obj.transform.localPosition = Vector3.zero;
                     obj.transform.localScale = (Vector3.one * tail.length);
                     obj.SetActive(true);
-                    obj.layer = GameLayers.ScaledSpace;
+                    obj.layer = GameLayers.SCALED_SPACE;
                 }
 
             }

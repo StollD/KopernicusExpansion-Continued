@@ -1,7 +1,12 @@
 ﻿using System;
 using Kopernicus;
+using Kopernicus.ConfigParser.Attributes;
+using Kopernicus.ConfigParser.BuiltinTypeParsers;
+using Kopernicus.ConfigParser.Enumerations;
+using Kopernicus.ConfigParser.Interfaces;
 using Kopernicus.Configuration;
 using Kopernicus.Configuration.ModLoader;
+using Kopernicus.Configuration.Parsing;
 
 namespace KopernicusExpansion
 {
@@ -27,8 +32,8 @@ namespace KopernicusExpansion
                 {
                     FootprintRemover mod = new FootprintRemover();
                     mod.Create(generatedBody.pqsVersion);
-                    mod.order = 0;
-                    mod.enabled = true;
+                    mod.Order = 0;
+                    mod.Enabled = true;
                 }
             }
             

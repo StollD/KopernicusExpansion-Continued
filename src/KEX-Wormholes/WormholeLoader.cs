@@ -1,6 +1,10 @@
 ﻿using System;
 using Kopernicus;
+using Kopernicus.ConfigParser.Attributes;
+using Kopernicus.ConfigParser.BuiltinTypeParsers;
+using Kopernicus.ConfigParser.Interfaces;
 using Kopernicus.Configuration;
+using Kopernicus.Configuration.Parsing;
 using Kopernicus.UI;
 
 namespace KopernicusExpansion
@@ -93,7 +97,7 @@ namespace KopernicusExpansion
             /// <summary>
             /// Creates a new Wormhole Loader from a spawned CelestialBody.
             /// </summary>
-            [KittopiaConstructor(KittopiaConstructor.Parameter.CelestialBody)]
+            [KittopiaConstructor(KittopiaConstructor.ParameterType.CelestialBody)]
             public WormholeLoader(CelestialBody body)
             {
                 // Is this a spawned body?

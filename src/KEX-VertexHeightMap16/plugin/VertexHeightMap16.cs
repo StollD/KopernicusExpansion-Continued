@@ -1,7 +1,10 @@
 ﻿using System;
 using Kopernicus;
+using Kopernicus.ConfigParser.Attributes;
+using Kopernicus.ConfigParser.BuiltinTypeParsers;
 using Kopernicus.Configuration;
 using Kopernicus.Configuration.ModLoader;
+using Kopernicus.Configuration.Parsing;
 
 namespace KopernicusExpansion
 {
@@ -11,34 +14,34 @@ namespace KopernicusExpansion
         {    
             // The map texture for the planet
             [ParserTarget("map")]
-            public MapSOParser_GreyScale<MapSO> heightMap
+            public MapSOParserGreyScale<MapSO> heightMap
             {
-                get { return mod.heightMap; }
-                set { mod.heightMap = value; }
+                get { return Mod.heightMap; }
+                set { Mod.heightMap = value; }
             }
 
             // Height map offset
             [ParserTarget("offset")]
             public NumericParser<Double> heightMapOffset 
             {
-                get { return mod.heightMapOffset; }
-                set { mod.heightMapOffset = value; }
+                get { return Mod.heightMapOffset; }
+                set { Mod.heightMapOffset = value; }
             }
 
             // Height map offset
             [ParserTarget("deformity")]
             public NumericParser<Double> heightMapDeformity
             {
-                get { return mod.heightMapDeformity; }
-                set { mod.heightMapDeformity = value; }
+                get { return Mod.heightMapDeformity; }
+                set { Mod.heightMapDeformity = value; }
             }
 
             // Height map offset
             [ParserTarget("scaleDeformityByRadius")]
             public NumericParser<Boolean> scaleDeformityByRadius
             {
-                get { return mod.scaleDeformityByRadius; }
-                set { mod.scaleDeformityByRadius = value; }
+                get { return Mod.scaleDeformityByRadius; }
+                set { Mod.scaleDeformityByRadius = value; }
             }
         }
     }

@@ -133,12 +133,11 @@ namespace KopernicusExpansion
                             {
                                 CodeGen getter = multiplierMap.Getter();
                                 {
-                                    Debug.Log(getter.Base());
-                                    getter.Return(getter.Base().Property("mod").Field("multiplierMap"));
+                                    getter.Return(getter.Base().Property("Mod").Field("multiplierMap"));
                                 }
                                 CodeGen setter = multiplierMap.Setter();
                                 {
-                                    setter.Assign(setter.Base().Property("mod").Field("multiplierMap"),
+                                    setter.Assign(setter.Base().Property("Mod").Field("multiplierMap"),
                                         setter.PropertyValue());
                                 }
                             }
@@ -148,11 +147,11 @@ namespace KopernicusExpansion
                             {
                                 CodeGen getter = splitChannels.Getter();
                                 {
-                                    getter.Return(getter.Base().Property("mod").Field("splitChannels"));
+                                    getter.Return(getter.Base().Property("Mod").Field("splitChannels"));
                                 }
                                 CodeGen setter = splitChannels.Setter();
                                 {
-                                    setter.Assign(setter.Base().Property("mod").Field("splitChannels"),
+                                    setter.Assign(setter.Base().Property("Mod").Field("splitChannels"),
                                         setter.PropertyValue());
                                 }
                             }
@@ -166,7 +165,7 @@ namespace KopernicusExpansion
                                 ContextualOperand pqsVersion = create_PQS.Arg("pqsVersion");
                                 create_PQS.Invoke(create_PQS.Base(), "Create", pqsVersion);
                                 create_PQS.Assign(loader, assembly.ExpressionFactory.New(loaderType));
-                                create_PQS.Invoke(loader, "Create", create_PQS.Base().Property("mod"), pqsVersion);
+                                create_PQS.Invoke(loader, "Create", create_PQS.Base().Property("Mod"), pqsVersion);
                             }
                             CodeGen create_Mod_PQS = loaderGen.Public.Override.Method(typeof(void), "Create")
                                 .Parameter(modGen, "_mod")
@@ -176,7 +175,7 @@ namespace KopernicusExpansion
                                 ContextualOperand pqsVersion = create_Mod_PQS.Arg("pqsVersion");
                                 create_Mod_PQS.Invoke(create_Mod_PQS.Base(), "Create", _mod, pqsVersion);
                                 create_Mod_PQS.Assign(loader, assembly.ExpressionFactory.New(loaderType));
-                                create_Mod_PQS.Invoke(loader, "Create", create_Mod_PQS.Base().Property("mod"), pqsVersion);
+                                create_Mod_PQS.Invoke(loader, "Create", create_Mod_PQS.Base().Property("Mod"), pqsVersion);
                             }
                         }
                     }

@@ -14,7 +14,7 @@ namespace KopernicusExpansion
         {    
             // The map texture for the planet
             [ParserTarget("map")]
-            public MapSOParserGreyScale<MapSO> heightMap
+            public MapSOParserRGB<MapSO> heightMap
             {
                 get { return Mod.heightMap; }
                 set { Mod.heightMap = value; }

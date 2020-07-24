@@ -17,7 +17,6 @@ Version 0.1:
 - Procedural gas giant clouds
 - Animated comet tails
 - Emissive oceans
-- Refractive atmospheres
 - Basic scaled exporter
 - Basic texture viewer
 
@@ -35,8 +34,9 @@ Version 0.2:
 
 Version 0.3:
 ------------
-- Deprecated gas giant shaders
+- Deprecated gas giant shaders: Built-in as of 1.10
 - Deprecated creatures: good idea, but ultimately not one for this mod.
+- Deprecated Refraction: Bad effects, abandoned for now.
 
 Beyond...?:
 -------

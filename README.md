@@ -1,8 +1,6 @@
 Kopernicus Expansion
 ====================
 
-Forum thread: [http://forum.kerbalspaceprogram.com/threads/132390](http://forum.kerbalspaceprogram.com/threads/132390)
-
 KopernicusExpansion is an expansion mod for Kopernicus so that planet creators can have more fancy features and effects for their planets.
 
 **To install:**
@@ -42,6 +40,10 @@ Version 0.3:
 
 - Voxel terrain
 - Particle grass
+
+Version 0.4:
+------------
+Deprecated gas giant shaders
 
 Beyond:
 -------

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -128,17 +128,18 @@ namespace KopernicusExpansion
                 // Are we within the jump range?
                 if (FlightGlobals.ship_altitude < jumpMaxAltitude && FlightGlobals.ship_altitude > jumpMinAltitude)
                 {
-                    // Disable the log output
-                    PDebug.DebugLevel l = PDebug.debugLevel;
-                    PDebug.debugLevel = PDebug.DebugLevel.None;
+                    //NOTE: Reimpliment in different manner (Change to sound?)
 
-                    for (Int32 i = 0; i < 5; i++)
+                    /*for (Int32 i = 0; i < 5; i++)
                     {
                         Vector3 random = UnityEngine.Random.onUnitSphere;
-                        GameObject effect = FXMonger.Splash(
-                            FlightGlobals.ship_position + random * 50, 1000).effectObj;
+                        Debug.Log("1");
+                        GameObject effect = FXMonger.Splash(FlightGlobals.ship_position + random * 50, 1000).effectObj;
+                        Debug.Log("2");
                         effect.transform.localScale = Vector3.one * 10;
+                        Debug.Log("3");
                         effect.transform.up = -random;
+                        Debug.Log("4");
                     }
 
                     // Update the FXMonger
@@ -146,9 +147,7 @@ namespace KopernicusExpansion
                     for (Int32 i = 0; i < mongers.Length; i++)
                     {
                         mongers[i].SendMessage("LateUpdate");
-                    }
-
-                    PDebug.debugLevel = l;
+                    }*/
 
                     // If the Pe is within the jump range, jump
                     if (FlightGlobals.ship_altitude - _lastAlt > 0)

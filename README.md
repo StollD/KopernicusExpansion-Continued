@@ -8,47 +8,39 @@ KopernicusExpansion is an expansion mod for Kopernicus so that planet creators c
 1. Merge GameData folder with the one in your KSP folder
 2. Done!
 
-KopernicusExpansion Roadmap
+KopernicusExpansion Versions
 ===========================
-
-Italics means that it has been completed, and released.
 
 Version 0.1:
 ------------
 
-- *Procedural gas giant clouds*
-- *Animated comet tails*
-- *Emissive oceans*
-- *Refractive atmospheres*
-- *Basic scaled exporter*
-- *Basic texture viewer*
+- Procedural gas giant clouds
+- Animated comet tails
+- Emissive oceans
+- Refractive atmospheres
+- Basic scaled exporter
+- Basic texture viewer
 
 Version 0.2:
 ------------
 
-- *ModularNoise*
-- *New ScaledVersion exporter*
-- *New texture viewer*
-- *Footprints*
-- *Fully configurable comet tails*
-- *DebugHeightColor*
-- *Start of creatures*
-- *Creature development tools*
+- ModularNoise
+- New ScaledVersion exporter
+- New texture viewer
+- Footprints
+- Fully configurable comet tails
+- DebugHeightColor
+- Start of creatures
+- Creature development tools
 
 Version 0.3:
 ------------
+- Deprecated gas giant shaders
+- Deprecated creatures: good idea, but ultimately not one for this mod.
 
-- Voxel terrain
-- Particle grass
-
-Version 0.4:
-------------
-Deprecated gas giant shaders
-
-Beyond:
+Beyond...?:
 -------
 
-- Creature AI and spawning
 - Planetary music player
 - Atmospheric haze
 - Atmospheric particles

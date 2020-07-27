@@ -37,12 +37,19 @@ Version 0.3:
 - Deprecated gas giant shaders: Built-in as of 1.10
 - Deprecated creatures: good idea, but ultimately not one for this mod.
 - Deprecated Refraction: Bad effects, abandoned for now.
+- Deprecated Emission: Bad Effects
+
+PLANS:
+------
+- TEMPORARY DEPRECATION: CometFX, need to implement new comet particles.
+- Stock Footprint Configs!
+- Considering other deprecations, looking in to functions of technical features
+
 
 Beyond...?:
 -------
 
 - Planetary music player
-- Atmospheric haze
 - Atmospheric particles
 - PQS material editor
 - PQS editor and viewer

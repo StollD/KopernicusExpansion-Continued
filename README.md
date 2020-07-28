@@ -44,6 +44,9 @@ PLANS:
 - TEMPORARY DEPRECATION: CometFX, need to implement new comet particles.
 - Stock Footprint Configs!
 - Considering other deprecations, looking in to functions of technical features
+- Implement Jool Shaders as gas giant replacement
+- Wiki for modders
+- Try and get Kopernicus on board with a link so modders know these features exist
 
 
 Beyond...?:

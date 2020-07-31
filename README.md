@@ -41,8 +41,7 @@ Version 0.3:
 
 PLANS:
 ------
-- TEMPORARY DEPRECATION: CometFX, need to implement new comet particles.
-- Stock Footprint Configs!
+- TEMPORARY DEPRECATION: Extra PQSMods are not the focus of this mod at the moment. The current focus is making planets look "sharp af" as the kids say. I WILL be adding them back after fixing everything else
 - Considering other deprecations, looking in to functions of technical features
 - Implement Jool Shaders as gas giant replacement
 - Wiki for modders

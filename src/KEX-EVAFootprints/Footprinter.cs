@@ -92,7 +92,7 @@ namespace KopernicusExpansion
                     obj.transform.localScale = new Vector3(leftOrRight, 1f, 1f);
 
                     // parent to PQS so that we can avoid the Krakensbane/FloatingOrigin
-                    obj.transform.parent = obj.transform;
+                    obj.transform.parent = hit.transform;
                 }
             }
         }

@@ -1,4 +1,8 @@
-﻿namespace KopernicusExpansion
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace KopernicusExpansion
 {
     namespace EVAFootprints
     {

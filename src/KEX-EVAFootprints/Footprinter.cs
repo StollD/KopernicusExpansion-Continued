@@ -1,4 +1,4 @@
-﻿using Kopernicus.Constants;
+using Kopernicus.Constants;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,28 +36,31 @@ namespace KopernicusExpansion
                 while (true)
                 {
                     // don't footprint non-footprintable bodies
-                    if (!FootprintSpawner.FootprintsAllowed.Contains(FlightGlobals.currentMainBody.transform.name))
+                    if (FootprintSpawner.FootprintsAllowed.Contains(FlightGlobals.currentMainBody.transform.name))
+                    {
+                        String state = eva.fsm.CurrentState.name;
+                        if (WalkingStates.Contains(state))
+                        {
+                            SpawnFootprint();
+                            leftOrRight *= -1f;
+                            yield return new WaitForSeconds(0.4f);
+                        }
+                        else if (RunningStates.Contains(state))
+                        {
+                            SpawnFootprint();
+                            leftOrRight *= -1f;
+                            yield return new WaitForSeconds(0.15f);
+                        }
+                        else if (BoundingStates.Contains(state))
+                        {
+                            SpawnFootprint();
+                            leftOrRight *= -1f;
+                            yield return new WaitForSeconds(0.4f);
+                        }
+                    }
+                    else
+                    {
                         yield return null;
-
-                    String state = eva.fsm.CurrentState.name;
-
-                    if (WalkingStates.Contains(state))
-                    {
-                        SpawnFootprint();
-                        leftOrRight *= -1f;
-                        yield return new WaitForSeconds(0.4f);
-                    }
-                    else if (RunningStates.Contains(state))
-                    {
-                        SpawnFootprint();
-                        leftOrRight *= -1f;
-                        yield return new WaitForSeconds(0.15f);
-                    }
-                    else if (BoundingStates.Contains(state))
-                    {
-                        SpawnFootprint();
-                        leftOrRight *= -1f;
-                        yield return new WaitForSeconds(0.4f);
                     }
 
                     yield return null;

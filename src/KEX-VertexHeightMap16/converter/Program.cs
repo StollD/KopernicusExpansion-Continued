@@ -38,7 +38,7 @@ namespace KopernicusExpansion
                     for (Int32 y = 0; y < height; y++)
                     {
                         Int32 index = (y * width + x) * 2;
-                        newImage.SetPixel(x, y, Color.FromArgb(data[index + 1], 0, data[index], 0));
+                        newImage.SetPixel(x, y, Color.FromArgb(255, 0, data[index], data[index + 1]));
                     }
                 }
 

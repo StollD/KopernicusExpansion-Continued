@@ -15,8 +15,18 @@ namespace KopernicusExpansion
                 Console.WriteLine("    * The texture is a greyscale .raw file, with only one channel saved.");
                 Console.WriteLine("    * The texture is 2 x 1");
                 Console.WriteLine("    * The texture is exported with Macintosh byte order");
-                Console.WriteLine("Press any key to continue...");
-                Console.ReadKey();
+                Console.WriteLine("Please select the bit-size of the input texture:");
+                Console.WriteLine("(1) - 16-bit (for use with VertexHeightMap16)");
+                Console.WriteLine("(2) - 32-bit (will be converted down to 24-bit for use with VertexHeightMap24)");
+                Console.WriteLine("(Press either '1' or '2' on your keyboard)");
+                char inK = Console.ReadKey().KeyChar;
+                Console.WriteLine();
+                if(inK != '1' && inK != '2')
+                {
+                    Console.WriteLine("Not recognized: " + inK);
+                    return;
+                }
+                bool bits24 = inK == '2';
 
                 // Load the texture
                 if (args.Length == 0 || !File.Exists(args[0]))
@@ -30,7 +40,7 @@ namespace KopernicusExpansion
 
 
                 // Create a new texture
-                Int32 height = (Int32) Math.Sqrt(data.Length / 4d);
+                Int32 height = (Int32) Math.Sqrt(data.Length / (bits24 ? 8d : 4d));
                 Int32 width = 2 * height;
                 Bitmap newImage = new Bitmap(width, height, PixelFormat.Format32bppArgb);
                 for (Int32 x = 0; x < width; x++)
@@ -38,7 +48,15 @@ namespace KopernicusExpansion
                     for (Int32 y = 0; y < height; y++)
                     {
                         Int32 index = (y * width + x) * 2;
-                        newImage.SetPixel(x, y, Color.FromArgb(data[index + 1], 0, data[index], 0));
+                        if (bits24) index *= 2;
+                        if (bits24)
+                        {
+                            newImage.SetPixel(x, y, Color.FromArgb(255, data[index], data[index + 1], data[index + 2]));
+                        }
+                        else
+                        {
+                            newImage.SetPixel(x, y, Color.FromArgb(255, 0, data[index], data[index + 1]));
+                        }
                     }
                 }
 

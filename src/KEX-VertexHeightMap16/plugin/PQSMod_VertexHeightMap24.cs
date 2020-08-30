@@ -14,12 +14,12 @@ namespace KopernicusExpansion
         /// <summary>
         /// A heightmap PQSMod that can parse encoded 16bpp textures
         /// </summary>
-        public class PQSMod_VertexHeightMap16 : PQSMod_VertexHeightMap
+        public class PQSMod_VertexHeightMap24 : PQSMod_VertexHeightMap
         {
             public override void OnVertexBuildHeight(PQS.VertexBuildData data)
             {
                 // Apply it
-                data.vertHeight += heightMapOffset + heightMapDeformity * VertexHeightMap16.SampleHeightmap16(data.u, data.v, heightMap, false);
+                data.vertHeight += heightMapOffset + heightMapDeformity * VertexHeightMap16.SampleHeightmap16(data.u, data.v, heightMap, true);
             }
         }
     }

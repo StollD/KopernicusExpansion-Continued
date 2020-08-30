@@ -12,7 +12,9 @@ Credits
 =======
 
 Creator: MrHappyFace
+
 Maintainers: StollD (previous), Vabien
+
 Contributers: R-T-B (footprint fix), TheGhastModding (VHM16/24)
 
 KopernicusExpansion Versions

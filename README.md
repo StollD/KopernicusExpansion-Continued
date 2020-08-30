@@ -47,6 +47,7 @@ Version 0.3:
 - Deprecated creatures: good idea, but ultimately not one for this mod.
 - Deprecated Refraction: Bad effects, abandoned for now.
 - Deprecated Emission: Bad Effects
+- Add VertexHeightMap24 (Special thanks to TheGhastModding)
 
 PLANS:
 ------
@@ -55,7 +56,6 @@ PLANS:
 - Wiki for modders
 - Try and get Kopernicus on board with a link so modders know these features exist
 - Add footprint sound effect and config option
-- Add VertexHeightMap24 (Special thanks to TheGhastModding)
 
 Beyond...?:
 -------

@@ -90,8 +90,8 @@ namespace KopernicusExpansion
                 // Floor
                 x = x - Math.Floor(x);
                 y = y - Math.Floor(y);
-				if(x < 0) x = 1.0 + x;
-				if(y < 0) y = 1.0 + y;
+		if(x < 0) x = 1.0 + x;
+		if(y < 0) y = 1.0 + y;
 
                 // X to U
                 coords.x = x * heightMap.Width;

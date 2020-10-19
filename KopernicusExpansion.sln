@@ -1,27 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-CometTail", "src\KEX-CometTail\KEX-CometTail.csproj", "{0E22CB23-5CF3-4612-8D59-03E786DF47F6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-Common", "src\KEX-Common\KEX-Common.csproj", "{32CACA6C-C471-417D-B2A7-B9A227187321}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-EmissiveFX", "src\KEX-EmissiveFX\KEX-EmissiveFX.csproj", "{35BA2830-5953-4D7A-9C7B-4FE3D5FBD55F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-EVAFootprints", "src\KEX-EVAFootprints\KEX-EVAFootprints.csproj", "{93A91F1C-A57E-46B2-B5CE-41B60A292BEC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-ModularNoise", "src\KEX-ModularNoise\KEX-ModularNoise.csproj", "{D81FA961-8015-492C-B77D-499F94EA84F7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-ProceduralGasGiants", "src\KEX-ProceduralGasGiants\KEX-ProceduralGasGiants.csproj", "{A4B6C205-F20F-4C90-BBE9-42DA414EEC8D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-RegionalPQSMods", "src\KEX-RegionalPQSMods\KEX-RegionalPQSMods.csproj", "{BB279332-FCFA-450D-9BFB-5D65EB7A246A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-VertexHeightMap16", "src\KEX-VertexHeightMap16\plugin\KEX-VertexHeightMap16.csproj", "{8CDE04F9-63DE-4805-9776-635906680E5A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-VertexHeightDeformity", "src\KEX-VertexHeightDeformity\KEX-VertexHeightDeformity.csproj", "{DE9E1437-4BDC-40A0-8E88-B230BCDCD74D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-ReentryEffects", "src\KEX-ReentryEffects\KEX-ReentryEffects.csproj", "{0BB03AC6-6CB6-4171-9FCE-E557CF23B21D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEX-Wormholes", "src\KEX-Wormholes\KEX-Wormholes.csproj", "{B82FCEE2-2771-4956-8694-D711019A3D2E}"
 EndProject
@@ -41,10 +35,6 @@ Global
 		{32CACA6C-C471-417D-B2A7-B9A227187321}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32CACA6C-C471-417D-B2A7-B9A227187321}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32CACA6C-C471-417D-B2A7-B9A227187321}.Release|Any CPU.Build.0 = Release|Any CPU
-		{35BA2830-5953-4D7A-9C7B-4FE3D5FBD55F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{35BA2830-5953-4D7A-9C7B-4FE3D5FBD55F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{35BA2830-5953-4D7A-9C7B-4FE3D5FBD55F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{35BA2830-5953-4D7A-9C7B-4FE3D5FBD55F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{93A91F1C-A57E-46B2-B5CE-41B60A292BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{93A91F1C-A57E-46B2-B5CE-41B60A292BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93A91F1C-A57E-46B2-B5CE-41B60A292BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -53,10 +43,6 @@ Global
 		{D81FA961-8015-492C-B77D-499F94EA84F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D81FA961-8015-492C-B77D-499F94EA84F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D81FA961-8015-492C-B77D-499F94EA84F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A4B6C205-F20F-4C90-BBE9-42DA414EEC8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A4B6C205-F20F-4C90-BBE9-42DA414EEC8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A4B6C205-F20F-4C90-BBE9-42DA414EEC8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A4B6C205-F20F-4C90-BBE9-42DA414EEC8D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BB279332-FCFA-450D-9BFB-5D65EB7A246A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BB279332-FCFA-450D-9BFB-5D65EB7A246A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB279332-FCFA-450D-9BFB-5D65EB7A246A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -69,10 +55,6 @@ Global
 		{DE9E1437-4BDC-40A0-8E88-B230BCDCD74D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE9E1437-4BDC-40A0-8E88-B230BCDCD74D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE9E1437-4BDC-40A0-8E88-B230BCDCD74D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0BB03AC6-6CB6-4171-9FCE-E557CF23B21D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BB03AC6-6CB6-4171-9FCE-E557CF23B21D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0BB03AC6-6CB6-4171-9FCE-E557CF23B21D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0BB03AC6-6CB6-4171-9FCE-E557CF23B21D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B82FCEE2-2771-4956-8694-D711019A3D2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B82FCEE2-2771-4956-8694-D711019A3D2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B82FCEE2-2771-4956-8694-D711019A3D2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -84,5 +66,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B48FB4A-5F2F-43A3-8645-6BC703CB169F}
 	EndGlobalSection
 EndGlobal

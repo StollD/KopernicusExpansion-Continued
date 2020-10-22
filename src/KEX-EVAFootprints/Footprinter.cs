@@ -13,24 +13,10 @@ namespace KopernicusExpansion
             public KerbalEVA eva;
             public Part part;
 
-            private static readonly String[] WalkingStates = new String[]{
-                "Walk (Arcade)",
-                "Walk (FPS)",
-            };
-            private static readonly String[] RunningStates = new String[]{
-                "Run (Arcade)",
-                "Run (FPS)"
-            };
-            private static readonly String[] BoundingStates = new String[]{
-                "Low G Bound (Grounded - Arcade)",
-                "Low G Bound (Grounded - FPS)"
-            };
-
             private void Start()
             {
                 StartCoroutine(UpdateCoroutine());
             }
-
             private IEnumerator<YieldInstruction> UpdateCoroutine()
             {
                 while (true)
@@ -38,24 +24,21 @@ namespace KopernicusExpansion
                     // don't footprint non-footprintable bodies
                     if (FootprintSpawner.FootprintsAllowed.Contains(FlightGlobals.currentMainBody.transform.name))
                     {
-                        String state = eva.fsm.CurrentState.name;
-                        if (WalkingStates.Contains(state))
+                        String state = eva.fsm.currentStateName;
+                        if (state == null)
+                        {
+                            state = "None";
+                        }
+                        Debug.Log(state);
+                        if (state.Contains("Walk") || state.Contains("Low G Bound (Grounded"))
                         {
                             SpawnFootprint();
-                            leftOrRight *= -1f;
                             yield return new WaitForSeconds(0.4f);
                         }
-                        else if (RunningStates.Contains(state))
+                        else if (state.Contains("Run"))
                         {
                             SpawnFootprint();
-                            leftOrRight *= -1f;
                             yield return new WaitForSeconds(0.15f);
-                        }
-                        else if (BoundingStates.Contains(state))
-                        {
-                            SpawnFootprint();
-                            leftOrRight *= -1f;
-                            yield return new WaitForSeconds(0.4f);
                         }
                     }
                     else
@@ -90,7 +73,7 @@ namespace KopernicusExpansion
                     obj.transform.rotation = Quaternion.LookRotation(cross, hitNormal); // vector math is fun :D
                     obj.transform.Translate(Vector3.right * 0.1f * leftOrRight);
                     obj.transform.localScale = new Vector3(leftOrRight, 1f, 1f);
-
+                    leftOrRight *= -1f;
                     // parent to PQS so that we can avoid the Krakensbane/FloatingOrigin
                     obj.transform.parent = hit.transform;
                 }

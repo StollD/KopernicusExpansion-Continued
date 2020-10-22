@@ -81,7 +81,6 @@ namespace KopernicusExpansion
                 GameEvents.onPartUnpack.Add(AddFootprinter);
                 GameEvents.onCrewOnEva.Add(OnCrewOnEVA);
             }
-
             void OnDestroy()
             {
                 GameEvents.onPartUnpack.Remove(AddFootprinter);

@@ -29,7 +29,6 @@ namespace KopernicusExpansion
                         {
                             state = "None";
                         }
-                        Debug.Log(state);
                         if (state.Contains("Walk") || state.Contains("Low G Bound (Grounded"))
                         {
                             SpawnFootprint();

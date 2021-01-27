@@ -12,7 +12,7 @@ namespace KopernicusExpansion
     namespace VertexHeightMap32
     {
         /// <summary>
-        /// A heightmap PQSMod that can parse encoded 16bpp textures
+        /// A heightmap PQSMod that can parse encoded 24bpp textures
         /// </summary>
         public class PQSMod_VertexHeightMap24 : PQSMod_VertexHeightMap
         {

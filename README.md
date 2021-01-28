@@ -49,8 +49,8 @@ Version 0.3:
 - Deprecated gas giant shaders: Built-in as of 1.10
 - Deprecated creatures: good idea, but ultimately not one for this mod.
 - Deprecated Refraction: Bad effects, abandoned for now.
-- Deprecated Emission: Bad Effects
 - Add VertexHeightMap24 (Special thanks to TheGhastModding)
+- Added examples and stock footprint configs
 
 PLANS:
 ------

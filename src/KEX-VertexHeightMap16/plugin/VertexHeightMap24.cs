@@ -29,7 +29,7 @@ namespace KopernicusExpansion
                 set { Mod.heightMapOffset = value; }
             }
 
-            // Height map offset
+            // Height map deformity
             [ParserTarget("deformity")]
             public NumericParser<Double> HeightMapDeformity
             {
@@ -37,7 +37,6 @@ namespace KopernicusExpansion
                 set { Mod.heightMapDeformity = value; }
             }
 
-            // Height map offset
             [ParserTarget("scaleDeformityByRadius")]
             public NumericParser<Boolean> ScaleDeformityByRadius
             {

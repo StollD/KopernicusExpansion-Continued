@@ -55,7 +55,7 @@ namespace KopernicusExpansion
                 float height = 0;
                 if (bits24)
                 {
-                    height = (float)((int)c.b | ((int)c.g << 8) | ((int)c.r << 8)) / (float)0x00FFFFFF;
+                    height = (float)((int)c.b | ((int)c.g << 8) | ((int)c.r << 16)) / (float)0x00FFFFFF;
                 }
                 else
                 {

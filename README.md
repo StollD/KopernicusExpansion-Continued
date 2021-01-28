@@ -5,8 +5,11 @@ KopernicusExpansion is an expansion mod for Kopernicus so that planet creators c
 
 **To install:**
 
-1. Merge GameData folder with the one in your KSP folder
-2. Done!
+1. Download the mods you want/need
+2. If necessary, download examples (STOCK FOOTPRINT CONFIGS ARE HERE)
+3. Ensure dependencies are installed (Kopernicus)
+4. ???
+5. Profit.
 
 Credits
 =======
